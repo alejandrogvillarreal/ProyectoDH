@@ -145,7 +145,7 @@
           $ext = pathinfo($_FILES['userPhoto']['name'],PATHINFO_EXTENSION);
           //valido la extension
           if($ext == 'jpg' || $ext == 'png' || $ext == 'jpeg'){
-            $hasta = "avatars/".$archivo.".".$ext;
+            $hasta = "images/avatars/".$archivo.".".$ext;
             //si todo esta bien hasta aca, subo el archivo
             move_uploaded_file($desde,$hasta);
           }else{
@@ -166,7 +166,7 @@
 
 <body>
     <?php require 'header.php';?>
-      
+
 
 <section class="login-block">
   <div class="container">
@@ -175,6 +175,7 @@
         <h1 class="text-center">Registro</h1>
         <hr>
       </div>
+        <!-- ACA EMPIEZA LA COLUMNA IZQUIERA DE LA PANTALLA (FORM)-->
       <div class="col-md-4 login-sec">
         <form class="login-form" action="" method="post" enctype="multipart/form-data">
         <div class="form-group">
@@ -189,7 +190,7 @@
               <input type="text" class="form-control" name="apellido" placeholder="Ingrese su apellido" value="<?php echo $apellido; ?>" required="required">
               <span> <?php echo $errorApellido; ?></span>
             </div>
-          </div>          
+          </div>
         </div>
           <div class="form-group">
             <div class="form-row">
@@ -208,12 +209,12 @@
                 </select>
                 <span> <?php echo $errorPais; ?></span>
               </div>
-            </div>          
+            </div>
           </div>
           <div class="form-group">
             <label>Email</label>
             <input type="email" class="form-control" placeholder="ejemplo@gmail.com" name="userMail" value="<?php echo $email; ?>" required="required">
-            <span> <?php echo $errorEmail; ?></span>      
+            <span> <?php echo $errorEmail; ?></span>
           </div>
           <div class="form-group">
             <div class="form-row">
@@ -227,11 +228,12 @@
                 <input type="password" class="form-control" name="userPassR" placeholder="Verifique contraseña" required="required">
                 <span> <?php echo $errorContrasenaR; ?></span>
               </div>
-            </div>          
+            </div>
           </div>
-          <div class="form-group">
+          <div class="custom-file form-group">
             <label>Avatar</label>
-            <input type="file" class="text-center center-block file-upload" name="userPhoto">
+            <input type="file" class="custom-file-input text-center center-block" id="customFile"  name="userPhoto">
+            <label class="custom-file-label text-left" for="customFile">Elegir</label>
             <span> <?php echo $errorImg; ?></span>
           </div>
           <div class="form-check">
@@ -240,11 +242,21 @@
             <small>Recordarme</small>
             </label>
           </div>
-          <button class="btn btn-success float-right" type="submit">Registrarse</button>
-          <button class="btn float-right mr-3" type="reset">Resetear</button>
+          <div class="form-group">
+            <button class="btn btn-success float-right" type="submit">Registrarse</button>
+            <button class="btn float-right mr-3" type="reset">Resetear</button>
+          </div>
         </form>
-        <div class="text-center">Ya tenes cuenta? <a href="login.php">Ingresá acá</a></div>
+        <br>
+        <br>
+        <div class="etc-login-form">
+          <div class="text-center"><p>Ya tenes cuenta? <a href="login.php">Ingresá acá</a></p></div>
+        </div>
       </div>
+        <!-- ACA TERMINA LA COLUMNA IZQUIERA DE LA PANTALLA (FORM)-->
+
+
+          <!-- ACA EMPIEZA LA COLUMNA DERECHA DE LA PANTALLA (FOTOS)-->
       <div class="col-md-8 banner-sec">
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
           <ol class="carousel-indicators">
@@ -259,7 +271,7 @@
                 <div class="banner-text">
                   <h2>Tenemos la mejor ropa</h2>
                   <p>SARASA SARASASARASA SARASA SARASA SARASA SARASASARASASARASA SARASA SARASA SARASA</p>
-                </div>  
+                </div>
               </div>
             </div>
             <div class="carousel-item">
@@ -268,7 +280,7 @@
                 <div class="banner-text">
                   <h2>Tenemos la mejor ropa</h2>
                   <p>SARASA SARASASARASA SARASA SARASA SARASA SARASASARASASARASA SARASA SARASA SARASA</p>
-                </div>  
+                </div>
               </div>
             </div>
             <div class="carousel-item">
@@ -277,18 +289,17 @@
                 <div class="banner-text">
                   <h2>Tenemos la mejor ropa</h2>
                   <p>SARASA SARASASARASA SARASA SARASA SARASA SARASASARASASARASA SARASA SARASA SARASA</p>
-                </div>  
+                </div>
               </div>
             </div>
-          </div>     
+          </div>
         </div>
       </div>
+      <!-- ACA TERMINA LA COLUMNA DERECHA DE LA PANTALLA (FOTOS)-->
     </div>
   </div>
 </section>
 
-
     <?php include 'footer.php'; ?>
 </body>
 </html>
-

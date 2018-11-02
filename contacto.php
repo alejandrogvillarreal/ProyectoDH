@@ -4,50 +4,46 @@
 <body>
         <?php
             require 'header.php';
-            
+
         ?>
 
 <!-- SECCION DE CONTACTO -->
 
-  <section id="contact">
-      <div class="section-content">
-        <h1 class="section-header">Get in <span class="content-header wow fadeIn " data-wow-delay="0.2s" data-wow-duration="2s"> Touch with us</span></h1>
-        <h3>Lorem Ipsum is simply dummy text of the printing and typesetting industry</h3>
+<div class="container">
+  <br>
+  <div class="row">
+      <!-- SECCION DE LA IMAGEN -->
+      <div class="col-12 col-lg-6">
+        <div class="map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d112061.09262729759!2d77.208022!3d28.632485!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x644e33bc3def0667!2sIndior+Tours+Pvt+Ltd.!5e0!3m2!1sen!2sus!4v1527779731123" width="100%" height="550px" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
       </div>
-      <div class="contact-section">
-      <div class="container">
-        <form>
-          <div class="col-md-6 form-line">
-              <div class="form-group">
-                <label for="exampleInputUsername">Your name</label>
-                <input type="text" class="form-control" id="" placeholder=" Enter Name">
-              </div>
-              <div class="form-group">
-                <label for="exampleInputEmail">Email Address</label>
-                <input type="email" class="form-control" id="exampleInputEmail" placeholder=" Enter Email id">
-              </div>  
-              <div class="form-group">
-                <label for="telephone">Mobile No.</label>
-                <input type="tel" class="form-control" id="telephone" placeholder=" Enter 10-digit mobile no.">
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for ="description"> Message</label>
-                <textarea  class="form-control" id="description" placeholder="Enter Your Message"></textarea>
-              </div>
-              <div>
+      <!-- FIN SECCION IMAGEN -->
 
-                <button type="button" class="btn btn-default submit"><i class="fa fa-paper-plane" aria-hidden="true"></i>  Send Message</button>
-              </div>
-              
+      <!-- SECCION DEL PRODUCTO -->
+      <div class="col-12 col-lg-6 add_to_cart_block">
+        <h1 class="text-center">Contactanos</h1>
+        <hr>
+        <form class="login-form" action="" method="post" enctype="multipart/form-data">
+          <div class="form-group">
+            <div class="form-group">
+              <label>Nombre</label>
+              <input type="text" class="form-control" placeholder="" name="userName">
+            </div>
+            <label>Email</label>
+            <input type="email" class="form-control" placeholder="" name="userMail">
           </div>
+          <textarea class="form-control" placeholder="Dejanos tu mensaje..." rows="8" name="texto"></textarea>
+          <br>
+          <button type="submit" class="btn btn-success float-right">Contactar</button>
         </form>
       </div>
-    </section>
+      <!-- FIN DE SECCION DEL PRODUCTO -->
+  </div>
+</div>
 
 <!-- TERMINA SECCION DE CONTACTO -->
-  
+
 
       <?php include 'footer.php'; ?>
 

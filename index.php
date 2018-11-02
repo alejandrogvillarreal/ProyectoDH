@@ -14,17 +14,13 @@
           <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
           </ol>
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img class="d-block w-100" src="images/foto1.jpeg" alt="First slide" style="height: 500px">
+              <img class="d-block w-100" src="images/foto1.jpeg" alt="First slide">
             </div>
             <div class="carousel-item">
-              <img class="d-block w-100" src="images/foto2.jpeg" alt="Second slide" style="height: 500px">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block w-100" src="images/foto3.jpeg" alt="Third slide" style="height: 500px">
+              <img class="d-block w-100" src="images/foto2.jpeg" alt="Second slide">
             </div>
           </div>
           <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -52,9 +48,9 @@
       <div class="d-flex justify-content-around flex-wrap">
         <div class="col-xs-6 col-sm-3">
           <a href="categorias.php"> 
-            <img class="mx-auto d-block" src="https://dafitistaticar-a.akamaihd.net/cms/1018-onsite-promociones-jeans.jpg" alt="Jeans" />
+            <img class="mx-auto d-block" src="https://dafitistaticar-a.akamaihd.net//cms/promociones_251x251_40offcalzado_010618.jpg" alt="Botas" />
           </a>
-          <h6 class="text-dark text-center">Jeans</h6>
+          <h6 class="text-dark text-center">Botas</h6>
         </div>
 
         <div class="col-xs-6 col-sm-3">
@@ -80,9 +76,9 @@
 
         <div class="col-xs-6 col-sm-3">
           <a href="categorias.php"> 
-            <img class="mx-auto d-block" src="https://dafitistaticar-a.akamaihd.net/cms/1018-onsite-deportes-20off.jpg" alt="Zapatillas Deportivas" />
+            <img class="mx-auto d-block" src="https://dafitistaticar-a.akamaihd.net/cms/promo_vestidos_030818.jpg" alt="Vestidos" />
           </a>
-          <h6 class="text-dark text-center">Zapatillas Deportivas</h6>
+          <h6 class="text-dark text-center">Vestidos</h6>
         </div>
 
         <div class="col-xs-6 col-sm-3">
@@ -101,9 +97,9 @@
 
         <div class="col-xs-6 col-sm-3">
           <a href="categorias.php"> 
-            <img class="mx-auto d-block" src="https://dafitistaticar-a.akamaihd.net/cms/cluster_50off_050618.jpg" alt="Zapatillas" />
+            <img class="mx-auto d-block" src="https://dafitistaticar-a.akamaihd.net/cms/0827-masc-promociones-remesLD-2x749.jpg" alt="Remeras" />
           </a>
-          <h6 class="text-dark text-center">Zapatillas</h6>
+          <h6 class="text-dark text-center">Remeras</h6>
         </div>
 
       </div>

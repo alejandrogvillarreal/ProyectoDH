@@ -79,7 +79,7 @@
 
 <body>
     <?php require 'header.php';?>
-      
+
 <section class="login-block">
   <div class="container">
     <div class="row">
@@ -87,11 +87,14 @@
         <h1 class="text-center">Iniciar Sesion</h1>
         <hr>
       </div>
+      <!-- ACA EMPIEZA LA COLUMNA IZQUIERA DE LA PANTALLA (FORM)-->
       <div class="col-md-4 login-sec">
+
+
         <form class="login-form" action="" method="post" enctype="multipart/form-data">
           <div class="form-group">
             <label>Email</label>
-            <input type="email" class="form-control" placeholder="" name="userMail">      
+            <input type="email" class="form-control" placeholder="" name="userMail">
           </div>
           <div class="form-group">
             <label>Password</label>
@@ -99,14 +102,23 @@
           </div>
           <div class="form-check">
             <label class="form-check-label">
-            <input type="checkbox" class="form-check-input">
+            <input type="checkbox" class="form-check-input" name="recordarme" value="1">
             <small>Recordarme</small>
             </label>
           </div>
-          <button type="submit" class="btn btn-login float-right">Submit</button>
+          <button type="submit" class="btn btn-success float-right">Ingresar</button>
         </form>
-      <div class="text-center">Aún no tenes cuenta? <a href="registro.php">Registrate acá</a></div>
+
+
+        <br><br><br>
+        <div class="etc-login-form">
+          <div class="text-center">Olvidaste tu contraseña? <a href="registro.php">Click Acá</a></div>
+          <div class="text-center">Aún no tenes cuenta? <a href="registro.php">Registrate acá</a></div>
+        </div>
       </div>
+      <!-- ACA TERMINA LA COLUMNA IZQUIERA DE LA PANTALLA (FORM)-->
+
+      <!-- ACA EMPIEZA LA COLUMNA DERECHA DE LA PANTALLA (FOTOS)-->
       <div class="col-md-8 banner-sec">
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
           <ol class="carousel-indicators">
@@ -121,30 +133,31 @@
                 <div class="banner-text">
                   <h2>Tenemos la mejor ropa</h2>
                   <p>SARASA SARASASARASA SARASA SARASA SARASA SARASASARASASARASA SARASA SARASA SARASA</p>
-                </div>  
+                </div>
               </div>
             </div>
             <div class="carousel-item">
-              <img class="d-block img-fluid" src="images/carrousel-form-2.jpeg" alt="First slide">
+              <img class="d-block img-fluid" src="images/carrousel-form-2.jpeg" alt="Second slide">
               <div class="carousel-caption d-none d-md-block">
                 <div class="banner-text">
                   <h2>Tenemos la mejor ropa</h2>
                   <p>SARASA SARASASARASA SARASA SARASA SARASA SARASASARASASARASA SARASA SARASA SARASA</p>
-                </div>  
+                </div>
               </div>
             </div>
             <div class="carousel-item">
-              <img class="d-block img-fluid" src="images/carrousel-form-3.jpeg" alt="First slide">
+              <img class="d-block img-fluid" src="images/carrousel-form-3.jpeg" alt="Third slide">
               <div class="carousel-caption d-none d-md-block">
                 <div class="banner-text">
                   <h2>Tenemos la mejor ropa</h2>
                   <p>SARASA SARASASARASA SARASA SARASA SARASA SARASASARASASARASA SARASA SARASA SARASA</p>
-                </div>  
+                </div>
               </div>
             </div>
-          </div>     
+          </div>
         </div>
       </div>
+      <!-- ACA TERMINA LA COLUMNA DERECHA DE LA PANTALLA (FOTOS)-->
     </div>
   </div>
 </section>
@@ -152,4 +165,3 @@
     <?php include 'footer.php'; ?>
 </body>
 </html>
-

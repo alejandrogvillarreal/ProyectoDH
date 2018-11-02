@@ -1,416 +1,50 @@
-/*BASE CSS*/
-
-html, body{
-   margin: 0;
+.slider_ale{
+  padding-right: 0px;
+  padding-left: 0px;
 }
-
 body{
-line-height: 18px;
-font-size: 18px;
-background: url('../images/greenthemebckg.png');
-font-family: 'Open Sans', sans-serif;
-color: #fff;
+  background: linear-gradient(to bottom, #FFFDFD,#FFF5F3);
 }
 
-.container{
-  width: 960px;
-  margin: 0 auto;
-}
-
-.container-2{
-  width: 85%;
-  margin: 0 auto;
-}
-
-/* FIN BASE CSS*/
-
-/*Inicio Header*/
-
-.main{
-  background-color: #94d2f1;
-}
-
-/*Logo y titulo*/
-
-.logo-container{
-  text-align: left;
-  margin-left: 1em;
-}
-
-.logo-container h1{
-  display: inline-block;
+/*faq*/
+.card {
+  -moz-box-direction: normal;
+  -moz-box-orient: vertical;
+  background-color: #fff;
+  border-radius: 0.25rem;
+  display: flex;
+  flex-direction: column;
   position: relative;
-  font-size: 40px;
-  margin: 0 auto;
-  top: -30px;
+  margin-bottom:1px;
+  border:none;
+}
+.card-header a{
+    width:97%;
+    float:left;
+    color:#565656;
+    text-decoration-line: none;
 }
 
-/*Logo y titulo*/
-
-/*Barra de navegacion*/
-
-.main-nav{
-  border-top: 1px solid #45a8ff;
-  width: 100%;
-  text-align: center;
-  background-color: #79c1e6;
+.card-header h3{
+    margin:0 0 0px;
+    font-size:20px;
+    font-weight:bold;
+    color:#3fc199;
 }
-
-.main-nav ul{
-  padding: 0em;
-  margin: 0;
+.card-block {
+    -moz-box-flex: 1;
+    flex: 1 1 auto;
+    padding: 20px;
+    color:#232323;
+    box-shadow:inset 0px 4px 5px rgba(0,0,0,0.1);
+    border-top:1px soild #000;
+    border-radius:0;
 }
-
-.main-nav ul li{
-  list-style: none;
-  display: inline-block;
-  text-align: center;
-  width: 16.667%;
-  height: 20px;
+/*faq*/
+/*
+body{
+  background: #DE6262;
+  background: -webkit-linear-gradient(to bottom, #FFB88C, #DE6262);
+  background: linear-gradient(to bottom, #FFB88C, #DE6262);
 }
-
-.main-nav ul a{
-  text-decoration: none;
-  color: #fff;
-  font-size: 18px;
-}
-
-.main-nav ul li:hover{
-  background-color: #94d2f1;
-  color: rgb(255, 255, 200);
-}
-
-/*Barra de navegacion*/
-
-/*Barra de Login y registro*/
-.user-forms{
-  background-color: #252525;
-  text-align: right;
-  padding: 0.7em;
-}
-
-.user-forms a{
-  text-decoration: none;
-  color: white;
-  font-size: 18px;
-  margin: 1%;
-}
-
-.user-forms p{
-  margin: 0;
-  display: inline-block;
-  color: rgb(241, 206, 6);
-}
-
-.user-forms a:hover{
-  color: rgb(255, 255, 200);
-}
-
-/*Barra de Login y Registro
-
-/*Fin Header*/
-
-/*Inicio */
-
-/*Slider*/
-.slider{
-  background-color:gainsboro;
-  margin: 1em 0em;
-  padding: 5em;
-  color: black;
-}
-
-.slider p{
-  text-align: center;
-  font-size: 2em;
-}
-
-/*Slider*/
-
-/*Titulos del inicio (Ofertas semanales, destacados, etc)*/
-
-.product-title{
-  background-color: #94d2f1;
-  padding: 10px;
-}
-
-.product-title h2{
-  margin-left: 2em;
-}
-
-/*Titulos del inicio (Ofertas semanales, destacados, etc)*/
-
-/*Ofertas semanales*/
-.products{
-  text-align: center;
-}
-
-.products ul{
-  padding: 0em;
-}
-
-.products ul li{
-  display: inline-block;
-  background-color: white;
-  border-radius: 30%;
-  width: 30%;
-  margin: 10px;
-}
-.products span{
-  color: rgb(241, 206, 6);
-}
-
-.products ul li p{
-  color: black;
-  font-size: 18px;
-  font-weight: bold;
-  margin: 0;
-  padding: 0.8em;
-}
-
-.products img{
-  width: 100px;
-  height: 150px;
-  padding: 0.8em;
-}
-
-/*Ofertas semanales*/
-
-/*Productos destacados*/
-
-
-/* Productos destacados*/
-
-/*Inicio*/
-
-/*FOOTER*/
-
-footer{
-background-color: #252525;
-margin-top: 1em;
-padding: 1em;
-
-}
-
-.footer-list {
-  list-style: none;
-  column-count: 3;
-  width: 80%;
-  margin: 0 auto;
-}
-
-.footer-list ul{
-  margin: 0 auto;
-}
-
-.footer-list a{
-  text-decoration: none;
-  color: #fff;
-  font-size: 15px;
-}
-
-.footer-list a:hover{
-  color: rgb(255, 255, 200);
-}
-
-.footer-list img{
-  width: 30px;
-  display: inline-block;
-}
-
-.social-networks a{
-  position: relative;
-  margin-left: 10px;
-  bottom: 7px;
-}
-
-
-
-
-/*FOOTER*/
-
-/*LOGIN.PHP*/
-
-.form{
-  background-color: #79c1e6;
-  width: 578px;
-  height: 320px;
-  border: 1px solid #45a8ff;
-  border-left: none;
-  float: left;
-  padding: 2em 2em 0em;
-}
-
-.form span{
-  font-size: 16px;
-  color: rgb(158, 12, 12);
-  position: absolute;
-  margin: 10px;
-}
-
-.form h2{
-  margin: 0;
-  font-size: 30px;
-}
-
-.form label{
-  color: #fff;
-}
-
-.form input{
-  width: 50%;
-  border-radius: 5%;
-  margin-top: 0.5em;
-  border: 1px solid #333333;
-  padding: 0.3em;
-}
-
-.form button{
-  margin-top: 10px;
-  margin-left: 75px;
-  font-weight: bold;
-  font-size: 16px;
-  color: #fff;
-  width: 25%;
-  background-color: rgb(103, 228, 103);
-  border: 1px solid #333333;
-  border-radius: 5%;
-  cursor: pointer;
-  padding: 1em;
-}
-
-.link{
-  display: block;
-}
-
-.link p{
-  text-align: right;
-  font-size: 14px;
-}
-
-.link a{
-  font-size: 14px;
-  text-decoration: none;
-  color: rgb(255, 255, 200);
-  margin-left: 5px;
-}
-
-.link-index{
-  background-color: #252525;
-  clear: both;
-  overflow: hidden;
-}
-
-.link-index p{
-  margin-left: 1em;
-}
-
-.link-index a{
-  text-decoration: none;
-  color: rgb(241, 206, 6);
-}
-
-.right-container{
-  display: inline-block;
-  background-color: rgb(226, 226, 226);
-  border: 1px solid #45a8ff;
-  border-right: none;
-  border-left: none;
-  height: 356px;
-  width: 309px;
-  text-align: center;
-}
-
-.community-logo img{
-  display: block;
-  margin: 0 auto;
-}
-
-.go-register{
-  text-decoration: none;
-  background-color: #45a8ff;
-  color: white;
-  border-radius: 5%;
-  border: 1px solid #333333;
-  width: 50%;
-  padding: 0em 4em;
-  font-weight: bold;
-}
-
-/*LOGIN.PHP*/
-
-/*REGISTRO.PHP*/
-
-.form-registro{
-  background-color: #79c1e6;
-  padding: 1em;
-  box-sizing: border-box;
-  border: 1px solid #45a8ff;
-}
-
-.form-registro h2{
-  margin: 0 auto;
-}
-
-.form-registro span{
-  font-size: 16px;
-  color: rgb(158, 12, 12);
-}
-
-.form-registro label{
-  color: #fff;
-}
-
-.form-registro input{
-  width: 50%;
-  border-radius: 5%;
-  margin-top: 0.5em;
-  border: 1px solid #333333;
-  padding: 0.3em;
-}
-
-.form-registro button[type='submit']{
-  font-weight: bold;
-  font-size: 16px;
-  color: #fff;
-  width: 30%;
-  background-color: rgb(103, 228, 103);
-  border: 1px solid #333333;
-  border-radius: 5%;
-  cursor: pointer;
-  padding: 0.5em;
-}
-
-.form-registro button[type='reset']{
-  font-weight: bold;
-  font-size: 16px;
-  color: #fff;
-  width: 10%;
-  background-color: rgb(109, 7, 7);
-  border: 1px solid #333333;
-  border-radius: 5%;
-  cursor: pointer;
-  padding: 0.5em;
-}
-
-.form-registro input[type='file']{
-  font-size: 16px;
-  color: black;
-  width: 50%;
-  border-radius: 5%;
-  border: none;
-}
-
-.form-registro input[type='file']::-webkit-file-upload-button {
-  font-weight: bold;
-  color: #fff;
-  background-color: rgb(114, 113, 113);
-  border: 1px solid #333333;
-  cursor: pointer;
-}
-
-.buttons{
-  text-align: center;
-  margin-top: 35px;
-}
-/*REGISTRO.PHP*/
+*/

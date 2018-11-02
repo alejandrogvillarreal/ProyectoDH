@@ -26,12 +26,12 @@
           <h6 class="text-uppercase font-weight-bold">Atención al Cliente</h6>
           <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
           <p>
-            <a class="dark-grey-text" href="#contacto" >Contacto</a>
+            <a class="dark-grey-text" href="contacto.php" >Contacto</a>
           </p>
           <p>
             <a class="dark-grey-text" href="preguntas.php">Preguntas Frecuentes</a>
           </p>
-          
+
 
         </div>
         <!-- Grid column -->
@@ -58,9 +58,9 @@
           <!-- Links -->
           <h6 class="text-uppercase font-weight-bold" id="contacto">Contacto</h6>
           <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-            <p class="fa fa-home mr-3">Lima 1111, CABA, AR</p> 
-            <p class="fa fa-envelope mr-3">info@gmail.com</p> 
-            <p class="fa fa-phone mr-3">+54 9 4443-7466</p> 
+            <p class="fa fa-home mr-3">Lima 1111, CABA, AR</p>
+            <p class="fa fa-envelope mr-3">info@gmail.com</p>
+            <p class="fa fa-phone mr-3">+54 9 4443-7466</p>
 
         </div>
         <!-- Grid column -->
