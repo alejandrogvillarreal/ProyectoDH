@@ -15,7 +15,7 @@
       <!-- SECCION DE LA IMAGEN -->
       <div class="col-12 col-lg-6">
         <div class="map">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d112061.09262729759!2d77.208022!3d28.632485!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x644e33bc3def0667!2sIndior+Tours+Pvt+Ltd.!5e0!3m2!1sen!2sus!4v1527779731123" width="100%" height="550px" frameborder="0" style="border:0" allowfullscreen></iframe>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.3309494285704!2d-58.38378924951871!3d-34.621076080359025!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccb28ea8781cb%3A0xb791570f7236c962!2sDigital+House!5e0!3m2!1ses!2sar!4v1541188280662" width="100%" height="550px" frameborder="0" style="border:0" allowfullscreen></iframe>
         </div>
       </div>
       <!-- FIN SECCION IMAGEN -->
