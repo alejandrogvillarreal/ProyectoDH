@@ -1,4 +1,6 @@
 <?php
+  include_once("soporte.php");
+  require_once("Models/Usuario.php");
 
   $paises =[
     "AR"=>"Argentina",
@@ -13,149 +15,64 @@
     "VEN"=>"Venezuela"
   ];
 
+
+  
+  
   //VARIABLES
   $nombre = "";
   $apellido = "";
   $email = "";
-  $contrasena = "";
-  $nombreUsuario = "";
+  $username = "";
   $pais = "";
-  $contrasenaR = "";
+  $password = "";
+  $passwordR = "";
+  //$userPhoto = "";
 
-  $errorNombre = "";
-  $errorApellido = "";
-  $errorEmail = "";
-  $errorContrasena = "";
-  $errorContrasenaR = "";
-  $errorNombreUsuario = "";
-  $errorPais = "";
-  $errorImg = "";
+  //existen estos errores:
+  // $errores["nombre"],$errores["apellido"],$errores["email"],$errores["username"],$errores["pais"],$errores["password"]
+  //$errores["passwordR"]
+  $errores = [];
 
+  if ($_POST) {
+    $errores = $validator->validarRegistro($_POST, $db);
 
-  if($_POST){
-    //var_dump($_POST);
-    //var_dump($_FILES);
-
-    //le saco los espacios en blanco atras y adelante de los campos
-    //sanitizacion de datos
-
-    $nombre = trim($_POST['nombre']); // trim() elimina los espacios en blanco al inicio y al final
-    $apellido = trim($_POST['apellido']);
-    $nombreUsuario = trim($_POST['nombreUsuario']);
-    $email = trim($_POST['userMail']);
-    $contrasena = $_POST['userPass'];
-    $contrasenaR = $_POST['userPassR'];
-    $pais = trim($_POST['userCountry']);
-
-
-    //nombre vacio
-    if(!isset($nombre) ){
-        $errorNombre = "El nombre es obligatorio.<br>";
-    //cantidad de caracteres del nombre
-    }else if( strlen($nombre) < 4 || strlen($nombre) > 30){
-        $errorNombre = "El nombre debe ser de al menos 3 caracteres y menor a 30 caracteres.<br>";
-    }else if(!ctype_alpha($nombre)){
-        $errorNombre = "El nombre sólo puede contener letras";
+    if (!isset($errores["nombre"])) {
+      $nombre = $_POST["nombre"];
     }
-
-    //apellido vacio
-    if(!isset($apellido) ){
-        $errorApellido = "El apellido es obligatorio.<br>";
-    //cantidad de caracteres del apellido
-    }else if( strlen($apellido) < 4 || strlen($apellido) > 30){
-        $errorApellido = "El apellido debe ser de al menos 3 caracteres y menor a 30 caracteres.<br>";
-    }else if(!ctype_alpha($apellido)){
-        $errorApellido = "El apellido sólo puede contener letras";
+    if (!isset($errores["apellido"])) {
+      $apellido = $_POST["apellido"];
     }
-
-
-
-    //
-    if(!isset($nombreUsuario) ){
-        $errorNombreUsuario = "El nombre de usuario es obligatorio.<br>";
-    //cantidad de caracteres del nombre de usuario
-    }else if( strlen($nombreUsuario) < 4 || strlen($nombreUsuario) > 20){
-        $errorNombreUsuario = "El nombre debe ser de al menos 3 caracteres y menor a 20 caracteres.<br>";
-    }else if(!ctype_alpha($nombreUsuario)){
-        $errorNombreUsuario = "El nombre sólo puede contener letras";
+    if (!isset($errores["email"])) {
+      $email = $_POST["email"];
     }
-
-    //Pais vacio
-    if (empty($pais)) {
-      $errorPais = "El pais es obligatorio";
+    if (!isset($errores["username"])) {
+      $username = $_POST["username"];
     }
-
-    //email vacio
-    if(empty($email)){
-        $errorEmail = "El email es obligatorio.<br>";
-      //formato del email
-    }else if(filter_var($email, FILTER_VALIDATE_EMAIL) == false){
-        $errorEmail = "Formato de email inválido";
+    if (!isset($errores["pais"])) {
+      $pais = $_POST["pais"];
     }
-
-
-
-    if(empty($contrasena) || strlen($contrasena) < 5){
-      $errorContrasena = "La contraseña es muy corta";
+    if (!isset($errores["password"])) {
+      $password = $_POST["password"];
     }
-    elseif (strlen($contrasena) > 20) {
-      $errorContrasena = "La contraseña es muy larga";
+    if (!isset($errores["passwordR"])) {
+      $passwordR = $_POST["passwordR"];
     }
-
-
-
-    if(empty($contrasenaR) || strlen($contrasenaR) < 5){
-      $errorContrasenaR = "La contraseña es muy corta";
+    /*
+    if (!isset($errores["userPhoto"])) {
+      $userPhoto = $_POST["userPhoto"];
     }
-    elseif (strlen($contrasenaR) > 20) {
-      $errorContrasenaR = "La contraseña es muy larga";
-    }
-    elseif ($contrasena !== $contrasenaR) {
-      $errorContrasenaR = "Las contraseñas no coinciden";
-    }
+  */
 
-    // VALIDAR QUE LA FOTO SEA OBLIGATORIA
-    if (empty($_FILES['userPhoto']['name'])) {
-      $errorImg = "La foto es obligatoria";
-    }
+    if (count($errores) == 0) {
+      $usuario = new Usuario($_POST["nombre"], $_POST["apellido"], $_POST["email"], $_POST["username"], $_POST["pais"], 
+      $_POST["password"]);
 
-    //si no hay errores, hago algo
-    if(empty($errorNombre) && empty($errorApellido) && empty($errorNombreUsuario) && empty($errorEmail) && empty($errorPais) && empty($errorContrasena)  && empty($errorContrasenaR) && empty($errorImg)){
-        //puedo encriptar la contraseña
-        //$contrasena = password_hash($contrasena,PASSWORD_DEFAULT);
+      $email = $_POST["email"];
 
-        //puedo verificar si la contraseña es la misma que la que ya tengo
-        //password_verify($contrasena,$passHasheada);
+      $usuario->guardarImagen($email);
+      $usuario = $db->guardarUsuario($usuario);
 
-        //puedo agradecer por completar el formulario de manera valida
-        echo "<h1>Registro exitoso</h1>";
-
-        //puedo redirigir a otro lugar del sitio
-        header('Location:index.php');
-        echo "<h1>Registro exitoso</h1>";
-
-        var_dump($_FILES['foto']);
-        //Verifico si la foto llega bien
-        if($_FILES['userPhoto']['error'] == UPLOAD_ERR_OK){
-          //tomo la ruta temporal del archivo
-          $desde = $_FILES['userPhoto']['tmp_name'];
-          //creo un nombre unico de archivo (puede ser cualquier nombre)
-          $archivo = $email;
-          //busco la extension de la imagen dentro del nombre de la misma
-          $ext = pathinfo($_FILES['userPhoto']['name'],PATHINFO_EXTENSION);
-          //valido la extension
-          if($ext == 'jpg' || $ext == 'png' || $ext == 'jpeg'){
-            $hasta = "images/avatars/".$archivo.".".$ext;
-            //si todo esta bien hasta aca, subo el archivo
-            move_uploaded_file($desde,$hasta);
-          }else{
-            $errorImg = "Formato inválido de imagen";
-          }
-        }else{
-          $errorImg = "La userPhoto tuvo un error";
-        }
-
-
+      header("Location:perfil.php?email=$email");exit;
     }
   }
 ?>
@@ -182,13 +99,13 @@
           <div class="form-row">
             <div class="col">
               <label>Nombre</label>
-              <input type="text" class="form-control" name="nombre" placeholder="Ingrese su nombre" value="<?php echo $nombre; ?>" required="required">
-              <span> <?php echo $errorNombre; ?></span>
+              <input type="text" class="form-control" name="nombre" placeholder="Ingrese su nombre" value="<?php echo $nombre; ?>">
+              <span> <?php // echo $errorNombre; ?></span>
             </div>
             <div class="col">
               <label>Apellido</label>
-              <input type="text" class="form-control" name="apellido" placeholder="Ingrese su apellido" value="<?php echo $apellido; ?>" required="required">
-              <span> <?php echo $errorApellido; ?></span>
+              <input type="text" class="form-control" name="apellido" placeholder="Ingrese su apellido" value="<?php echo $apellido; ?>">
+              <span> <?php // echo $errorApellido; ?></span>
             </div>
           </div>
         </div>
@@ -196,37 +113,37 @@
             <div class="form-row">
               <div class="col">
                 <label>Nombre de Usuario</label>
-                <input type="text" class="form-control" name="nombreUsuario" placeholder="Josesito187" value="<?php echo $nombreUsuario; ?>" required="required">
-                <span> <?php echo $errorNombreUsuario; ?></span>
+                <input type="text" class="form-control" name="username" placeholder="Josesito187" value="<?php echo $username; ?>">
+                <span> <?php // echo $errorusername; ?></span>
               </div>
               <div class="col">
                 <label>Pais de Nacimiento</label>
-                <select id="inputState" class="form-control" name="userCountry" value="<?php echo $pais; ?>">
+                <select id="inputState" class="form-control" name="pais" value="<?php echo $pais; ?>">
                   <option>País...</option>
                   <?php foreach ($paises as $key => $pais): ?>
                     <option value="<?php echo $key; ?>"><?php echo $pais; ?></option>
                   <?php endforeach; ?>
                 </select>
-                <span> <?php echo $errorPais; ?></span>
+                <span> <?php // echo $errorPais; ?></span>
               </div>
             </div>
           </div>
           <div class="form-group">
             <label>Email</label>
-            <input type="email" class="form-control" placeholder="ejemplo@gmail.com" name="userMail" value="<?php echo $email; ?>" required="required">
-            <span> <?php echo $errorEmail; ?></span>
+            <input type="email" class="form-control" placeholder="ejemplo@gmail.com" name="email" value="<?php echo $email; ?>">
+            <span> <?php // echo $errorEmail; ?></span>
           </div>
           <div class="form-group">
             <div class="form-row">
               <div class="col">
                 <label>Contraseña</label>
-                <input type="password" class="form-control" name="userPass" placeholder="Contraseña" required="required">
-                <span> <?php echo $errorContrasena; ?></span>
+                <input type="password" class="form-control" name="password" placeholder="Contraseña">
+                <span> <?php // echo $errorContrasena; ?></span>
               </div>
               <div class="col">
                 <label>Repetir Contraseña</label>
-                <input type="password" class="form-control" name="userPassR" placeholder="Verifique contraseña" required="required">
-                <span> <?php echo $errorContrasenaR; ?></span>
+                <input type="password" class="form-control" name="passwordR" placeholder="Verifique contraseña">
+                <span> <?php // echo $errorContrasenaR; ?></span>
               </div>
             </div>
           </div>
@@ -234,7 +151,7 @@
             <label>Avatar</label>
             <input type="file" class="custom-file-input text-center center-block" id="customFile"  name="userPhoto">
             <label class="custom-file-label text-left" for="customFile">Elegir</label>
-            <span> <?php echo $errorImg; ?></span>
+            <span> <?php // echo $errorImg; ?></span>
           </div>
           <div class="form-check">
             <label class="form-check-label">
@@ -252,6 +169,13 @@
         <div class="etc-login-form">
           <div class="text-center"><p>Ya tenes cuenta? <a href="login.php">Ingresá acá</a></p></div>
         </div>
+        <ul class="errores">
+        <?php foreach ($errores as $error) : ?>
+          <li>
+            <?=$error?>
+          </li>
+        <?php endforeach; ?>
+        </ul>
       </div>
         <!-- ACA TERMINA LA COLUMNA IZQUIERA DE LA PANTALLA (FORM)-->
 

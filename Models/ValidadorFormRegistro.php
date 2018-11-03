@@ -4,7 +4,7 @@
   /**
    *
    */
-  class ValidadorFormRegistro extends ValidadorForm
+  abstract class ValidadorFormRegistro extends ValidadorForm
   {
 
     function __construct(argument)
