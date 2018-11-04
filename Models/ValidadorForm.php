@@ -7,7 +7,7 @@
   class ValidadorForm
   {
 
-    function validarLogin($post, DB $db) {
+    function validarLogin($post, DataBase $db) {
     $errores = [];
 
     foreach ($post as $clave => $valor) {
@@ -16,31 +16,35 @@
 
 
     if ($post["email"] == "") {
-      $errores["email"] = "Che, dejaste el mail incompleto";
+      $errores["email"] = "Por favor ingrese su email";
     }
     else if (filter_var($post["email"], FILTER_VALIDATE_EMAIL) == false) {
-      $errores["mail"] = "El mail tiene que ser un mail";
+      $errores["email"] = "Formato de email inválido";
     } else if ($db->traerPorMail($post["email"]) == NULL) {
-      $errores["mail"] = "El usuario no esta en nuestra base";
+      $errores["email"] = "El usuario no está registrado";
     }
 
     $usuario = $db->traerPorMail($post["email"]);
 
     if ($post["password"] == "") {
-      $errores["password"] = "No llenaste la contraseña";
+      $errores["password"] = "Por favor ingrese la contraseña";
     } else if ($usuario != NULL) {
       //El usuario existe y puso contraseña
       // Tengo que validar que la contraseño que ingreso sea valida
-      if (password_verify($post["password"], $usuario->getPassword()) == false) {
-        $errores["password"] = "La contraseña no verifica";
+      //////////////////////////////////////////////////////////////////////////////////////////////////
+                                          //NO FUNCIONA EL PASSWORD_VERIFY
+      //////////////////////////////////////////////////////////////////////////////////////////////////
+      if (password_verify($post["password"], $usuario->getPassword())) {
+        $errores["password"] = "La contraseña es incorrecta";
       }
     }
 
-
-
-
     return $errores;
   }
+
+
+
+
 
     function validarRegistro($post, DataBase $db) {
       $errores = [];

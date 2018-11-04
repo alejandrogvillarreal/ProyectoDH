@@ -4,7 +4,7 @@ require_once("Models/Usuario.php");
   /**
    *
    */
-  class DataBase 
+  class DataBase
   {
 
     protected $conn;
@@ -23,7 +23,7 @@ require_once("Models/Usuario.php");
     }
 
     function guardarUsuario(Usuario $usuario) {
-      $query = $this->conn->prepare("INSERT INTO usuarios(nombre,apellido,username,email,password,pais) 
+      $query = $this->conn->prepare("INSERT INTO usuarios(nombre,apellido,username,email,password,pais)
                                             VALUES(:nombre,:apellido,:username,:email,:password,:pais)");
 
       $query->bindValue(":nombre", $usuario->getNombre());
@@ -32,7 +32,7 @@ require_once("Models/Usuario.php");
       $query->bindValue(":email", $usuario->getEmail());
       $query->bindValue(":password", $usuario->getPassword());
       $query->bindValue(":pais", $usuario->getPais());
-      
+
       $query->execute();
 
       $id = $this->conn->lastInsertId();
@@ -40,6 +40,23 @@ require_once("Models/Usuario.php");
 
       return $usuario;
 
+    }
+
+
+    function traerPorMail($email) {
+      $query = $this->conn->prepare("Select * from usuarios where email = :email");
+      $query->bindValue(":email", $email);
+
+      $query->execute();
+
+      $usuarioFormatoArray = $query->fetch();
+
+      if ($usuarioFormatoArray) {
+        $usuario = new Usuario($usuarioFormatoArray["nombre"], $usuarioFormatoArray["apellido"], $usuarioFormatoArray["username"], $usuarioFormatoArray["pais"], $usuarioFormatoArray["password"], $usuarioFormatoArray["id"]);
+        return $usuario;
+      } else {
+        return NULL;
+      }
     }
 
     /*
@@ -59,20 +76,6 @@ require_once("Models/Usuario.php");
     }
 
     */
-    function traerPorMail($email) {
-      $query = $this->conn->prepare("Select * from usuarios where email = :email");
-      $query->bindValue(":email", $email);
 
-      $query->execute();
 
-      $usuarioFormatoArray = $query->fetch();
-
-      if ($usuarioFormatoArray) {
-        $usuario = new Usuario($usuarioFormatoArray["nombre"], $usuarioFormatoArray["apellido"], $usuarioFormatoArray["username"], $usuarioFormatoArray["pais"], $usuarioFormatoArray["password"], $usuarioFormatoArray["id"]);
-        return $usuario;
-      } else {
-        return NULL;
-      }
-    }
-    
   }
