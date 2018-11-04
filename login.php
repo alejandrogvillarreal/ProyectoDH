@@ -82,6 +82,7 @@
           <div class="text-center">Aún no tenes cuenta? <a href="registro.php">Registrate acá</a></div>
         </div>
 
+        <!-- PARA IMPRIMIR LOS ERRORES -->
         <ul class="errores">
     		<?php foreach ($errores as $error) : ?>
     			<li>
