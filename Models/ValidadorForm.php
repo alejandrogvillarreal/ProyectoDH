@@ -7,44 +7,42 @@
   class ValidadorForm
   {
 
-    function validarLogin($post, DataBase $db) {
-    $errores = [];
+      function validarLogin($post, DataBase $db) {
+      $errores = [];
 
-    foreach ($post as $clave => $valor) {
-      $post[$clave] = trim($valor);
-    }
-
-
-    if ($post["email"] == "") {
-      $errores["email"] = "Por favor ingrese su email";
-    }
-    else if (filter_var($post["email"], FILTER_VALIDATE_EMAIL) == false) {
-      $errores["email"] = "Formato de email inválido";
-    } else if ($db->traerPorMail($post["email"]) == NULL) {
-      $errores["email"] = "El usuario no está registrado";
-    }
-
-    $usuario = $db->traerPorMail($post["email"]);
-
-    if ($post["password"] == "") {
-      $errores["password"] = "Por favor ingrese la contraseña";
-    } else if ($usuario != NULL) {
-      //El usuario existe y puso contraseña
-      // Tengo que validar que la contraseño que ingreso sea valida
-      ///////////////////////////////////////////////////////////////////////////////////////////////////
-                                          //NO FUNCIONA EL PASSWORD_VERIFY
-      ///////////////////////////////////////////////////////////////////////////////////////////////////
-      if (password_verify($post["password"], $usuario->getPassword())) {
-        $errores["password"] = "La contraseña es incorrecta";
+      foreach ($post as $clave => $valor) {
+        $post[$clave] = trim($valor);
       }
+
+
+      if ($post["email"] == "") {
+        $errores["email"] = "Por favor ingrese su email";
+      }
+      else if (filter_var($post["email"], FILTER_VALIDATE_EMAIL) == false) {
+        $errores["email"] = "Formato de email inválido";
+      } else if ($db->buscarPorMail($post["email"]) == NULL) {
+        $errores["email"] = "El usuario no está registrado";
+      }
+
+      $usuario = $db->buscarPorMail($post["email"]);
+
+      if ($post["password"] == "") {
+        $errores["password"] = "Por favor ingrese la contraseña";
+      } else if ($usuario != NULL) {
+        //El usuario existe y puso contraseña
+        // Tengo que validar que la contraseño que ingreso sea valida
+        ///////////////////////////////////////////////////////////////////////////////////////////////////
+                                            //NO FUNCIONA EL PASSWORD_VERIFY
+        ///////////////////////////////////////////////////////////////////////////////////////////////////
+        if (password_verify($post["password"], $usuario->getPassword())) {
+          $errores["password"] = "La contraseña es incorrecta";
+        }
+      }
+
+      return $errores;
     }
 
-    return $errores;
-  }
-
-
-
-
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     function validarRegistro($post, DataBase $db) {
       $errores = [];
@@ -80,9 +78,9 @@
           $errores["username"] = "El nombre de usuario es obligatorio.";
       //cantidad de caracteres del nombre de usuario
       }else if( strlen($post["username"]) < 4 || strlen($post["username"]) > 20){
-          $errores["username"] = "El nombre debe ser de al menos 3 caracteres y menor a 20 caracteres.";
+          $errores["username"] = "El nombre de usuario debe ser de al menos 3 caracteres y menor a 20 caracteres.";
       }else if(!ctype_alpha($post["username"])){
-          $errores["username"] = "El nombre sólo puede contener letras";
+          $errores["username"] = "El nombre de usuario sólo puede contener letras";
       }
 
 
@@ -98,7 +96,7 @@
       }
       else if (filter_var($post["email"], FILTER_VALIDATE_EMAIL) == false) {
         $errores["mail"] = "Formato de email inválido";
-      } else if ($db->traerPorMail($post["email"]) != NULL) {
+      } else if ($db->buscarPorMail($post["email"]) != NULL) {
         $errores["mail"] = "El usuario ya existe!";
       }
 

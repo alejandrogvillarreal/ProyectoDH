@@ -43,7 +43,7 @@ require_once("Models/Usuario.php");
     }
 
 
-    function traerPorMail($email) {
+    function buscarPorMail($email) {
       $query = $this->conn->prepare("Select * from usuarios where email = :email");
       $query->bindValue(":email", $email);
 
@@ -51,12 +51,17 @@ require_once("Models/Usuario.php");
 
       $usuarioFormatoArray = $query->fetch();
 
+
       if ($usuarioFormatoArray) {
-        $usuario = new Usuario($usuarioFormatoArray["nombre"], $usuarioFormatoArray["apellido"], $usuarioFormatoArray["username"], $usuarioFormatoArray["pais"], $usuarioFormatoArray["password"], $usuarioFormatoArray["id"]);
+        //SI TRAE UN RESULTADO CREO UN USUARIO Y LO RETORNA
+        $usuario = new Usuario($usuarioFormatoArray["nombre"], $usuarioFormatoArray["apellido"], $usuarioFormatoArray["email"], $usuarioFormatoArray["username"], $usuarioFormatoArray["pais"], $usuarioFormatoArray["password"], $usuarioFormatoArray["id"]);
+
         return $usuario;
-      } else {
+      }
+      else {
         return NULL;
       }
+
     }
 
     /*

@@ -1,6 +1,18 @@
 <?php
-  include_once("soporte.php");
+  require 'head.php';
+
+  //NO VA EL include("soporte.php"); PORQUE YA LO TENGO INCLUIDO EN EL HEAD
+
+  //$usuarioLogueado = $auth->usuarioLogueado($db); //NO VA PORQUE ESTA EN EL HEAD
+
+  // ACA YA TENGO LA VARIABLE $usuarioLogueado
+
   require_once("Models/Usuario.php");
+
+  if ($auth->estaLogueado()) {
+		header("Location:index.php");
+    exit;
+	}
 
   $paises =[
     "AR"=>"Argentina",
@@ -15,9 +27,6 @@
     "VEN"=>"Venezuela"
   ];
 
-
-  
-  
   //VARIABLES
   $nombre = "";
   $apellido = "";
@@ -64,7 +73,7 @@
   */
 
     if (count($errores) == 0) {
-      $usuario = new Usuario($_POST["nombre"], $_POST["apellido"], $_POST["email"], $_POST["username"], $_POST["pais"], 
+      $usuario = new Usuario($_POST["nombre"], $_POST["apellido"], $_POST["email"], $_POST["username"], $_POST["pais"],
       $_POST["password"]);
 
       $email = $_POST["email"];
@@ -72,13 +81,16 @@
       $usuario->guardarImagen($email);
       $usuario = $db->guardarUsuario($usuario);
 
-      header("Location:perfil.php?email=$email");exit;
+      //LOGUEAR
+      $auth->loguear($_POST["email"]);
+			if (isset($_POST["recordame"])) {
+				//Quiere que lo recuerde
+				 $auth->recordame($_POST["email"]);
+			}
+      		header("Location:index.php");
+          exit;
     }
   }
-?>
-
-<?php
-    require 'head.php';
 ?>
 
 <body>
@@ -99,12 +111,12 @@
           <div class="form-row">
             <div class="col">
               <label>Nombre</label>
-              <input type="text" class="form-control" name="nombre" placeholder="Ingrese su nombre" value="<?php echo $nombre; ?>">
+              <input type="text" class="form-control" name="nombre" value="<?php echo $nombre; ?>">
               <span> <?php // echo $errorNombre; ?></span>
             </div>
             <div class="col">
               <label>Apellido</label>
-              <input type="text" class="form-control" name="apellido" placeholder="Ingrese su apellido" value="<?php echo $apellido; ?>">
+              <input type="text" class="form-control" name="apellido" value="<?php echo $apellido; ?>">
               <span> <?php // echo $errorApellido; ?></span>
             </div>
           </div>
@@ -113,16 +125,19 @@
             <div class="form-row">
               <div class="col">
                 <label>Nombre de Usuario</label>
-                <input type="text" class="form-control" name="username" placeholder="Josesito187" value="<?php echo $username; ?>">
+                <input type="text" class="form-control" name="username" placeholder="ej: Josesito" value="<?php echo $username; ?>">
                 <span> <?php // echo $errorusername; ?></span>
               </div>
               <div class="col">
                 <label>Pais de Nacimiento</label>
                 <select id="inputState" class="form-control" name="pais" value="<?php echo $pais; ?>">
-                  <option>País...</option>
-                  <?php foreach ($paises as $key => $pais): ?>
-                    <option value="<?php echo $key; ?>"><?php echo $pais; ?></option>
-                  <?php endforeach; ?>
+                  <?php foreach ($paises as $key => $pais) : ?>
+        						<?php if ($key == $_POST["pais"]) : ?>
+        							<option value="<?php echo $key; ?>" selected><?php echo $pais; ?></option>
+        						<?php else: ?>
+        							<option value="<?php echo $key; ?>"><?php echo $pais; ?></option>
+        						<?php endif; ?>
+        					<?php endforeach; ?>
                 </select>
                 <span> <?php // echo $errorPais; ?></span>
               </div>
@@ -137,12 +152,12 @@
             <div class="form-row">
               <div class="col">
                 <label>Contraseña</label>
-                <input type="password" class="form-control" name="password" placeholder="Contraseña">
+                <input type="password" class="form-control" name="password">
                 <span> <?php // echo $errorContrasena; ?></span>
               </div>
               <div class="col">
                 <label>Repetir Contraseña</label>
-                <input type="password" class="form-control" name="passwordR" placeholder="Verifique contraseña">
+                <input type="password" class="form-control" name="passwordR">
                 <span> <?php // echo $errorContrasenaR; ?></span>
               </div>
             </div>
@@ -155,7 +170,7 @@
           </div>
           <div class="form-check">
             <label class="form-check-label">
-            <input type="checkbox" class="form-check-input">
+            <input type="checkbox" class="form-check-input" name="recordame">
             <small>Recordarme</small>
             </label>
           </div>

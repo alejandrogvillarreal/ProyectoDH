@@ -1,46 +1,38 @@
 <?php
 
-  include_once("soporte.php");
+  require 'head.php';
 
 
-  // if ($auth->estaLogueado()) {
-  //   header("Location:inicio.php");exit;
-  // }
+  if ($auth->estaLogueado()) {
+    header("Location:index.php");
+    exit;
+  }
 
 
   //VARIABLES
   $email = "";
-  $password = "";
 
   $errores = [];
 
 	if ($_POST) {
 		$errores = $validator->validarLogin($_POST,$db);
 
+    // SI NO HAY ERROR DE EMAIL GUARDO EL EMAIL EN UNA VARIABLE PARA PERSISTIR LOS DATOS
     if (!isset($errores["email"])) {
       $email = $_POST["email"];
     }
-    // if (!isset($errores["password"])) {
-    //   $password = $_POST["pass"];
-    // }
 
 		if (count($errores) == 0) {
-			// LOGUEAR
-      // 		$auth->loguear($_POST["email"]);
-			// if (isset($_POST["recordame"])) {
-			// 	//Quiere que lo recuerde
-			// 	$auth->recordame($_POST["email"]);
-			// }
+			//LOGUEAR
+      $auth->loguear($_POST["email"]);
+			if (isset($_POST["recordame"])) {
+				//Quiere que lo recuerde
+				 $auth->recordame($_POST["email"]);
+			}
       		header("Location:index.php");
 		}
 	}
 
-
-
-
-?>
-<?php
-    require 'head.php';
 ?>
 
 <body>
@@ -68,7 +60,7 @@
           </div>
           <div class="form-check">
             <label class="form-check-label">
-            <input type="checkbox" class="form-check-input" name="recordarme" value="1">
+            <input type="checkbox" class="form-check-input" name="recordame">
             <small>Recordarme</small>
             </label>
           </div>

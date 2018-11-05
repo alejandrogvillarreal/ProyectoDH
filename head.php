@@ -1,3 +1,11 @@
+<?php
+
+require_once("soporte.php");
+
+//INICIALIZO AL USUARIO EN EL HEAD PARA TENERLO EN TODOS LOS ARCHIVOS
+$usuarioLogueado = $auth->usuarioLogueado($db);
+
+?>
 <!DOCTYPE html>
 <html>
 <head>

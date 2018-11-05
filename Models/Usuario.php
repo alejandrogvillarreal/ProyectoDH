@@ -1,21 +1,17 @@
 <?php
 
 
-
-  /**
-   *
-   */
   class Usuario
   {
 
-    protected $id;
-    protected $nombre;
-    protected $apellido;
-    protected $email;
-    protected $username;
-    protected $pais;
-    protected $password;
-    protected $foto;
+    private $id;
+    private $nombre;
+    private $apellido;
+    private $email;
+    private $username;
+    private $pais;
+    private $password;
+    private $foto;
 
     public function __construct($nombre, $apellido, $email, $username, $pais, $password, $id = null) {
       if ($id == null) {
@@ -33,61 +29,63 @@
       $this->pais = $pais;
     }
 
+    // SET Y GET DE ID
     public function getId() {
       return $this->id;
     }
-
     public function setId($id) {
       $this->id = $id;
     }
 
-    public function getEmail() {
-      return $this->email;
-    }
-
-    public function setEmail($email) {
-      $this->email = $email;
-    }
-
-    public function getPassword() {
-      return $this->password;
-    }
-
-    public function setPassword($password) {
-      $this->password = $password;
-    }
-
+    // SET Y GET DE NOMBRE
     public function getNombre() {
       return $this->nombre;
     }
-
     public function setNombre($nombre) {
       $this->nombre = $nombre;
     }
 
+    // SET Y GET DE APELLIDO
     public function getApellido() {
       return $this->apellido;
     }
-
     public function setApellido($apellido) {
       $this->apellido = $apellido;
     }
 
+    // SET Y GET DE EMAIL
+    public function getEmail() {
+      return $this->email;
+    }
+    public function setEmail($email) {
+      $this->email = $email;
+    }
+
+    // SET Y GET DE USERNAME
     public function getUsername() {
       return $this->username;
     }
-
     public function setUsername($username) {
       $this->username = $username;
     }
 
+    // SET Y GET DE PAIS
     public function getPais() {
       return $this->pais;
     }
-
     public function setPais($pais) {
       $this->pais = $pais;
     }
+
+    // SET Y GET DE PASSWORD
+    public function getPassword() {
+      return $this->password;
+    }
+    public function setPassword($password) {
+      $this->password = $password;
+    }
+
+
 
     public function guardarImagen($mail) {
 
@@ -104,7 +102,7 @@
         }
         $hasta = "images/avatars/";
         $miArchivo = $hasta . $this->getEmail() . "." . $ext;
-        $this->setFoto($miArchivo);
+        //$this->setFoto($miArchivo);
 
         move_uploaded_file($desde, $miArchivo);
 

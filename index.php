@@ -1,5 +1,13 @@
 <?php
     require 'head.php';
+
+    //NO VA EL include("soporte.php"); PORQUE YA LO TENGO INCLUIDO EN EL HEAD
+
+		//$usuarioLogueado = $auth->usuarioLogueado($db); //NO VA PORQUE ESTA EN EL HEAD
+
+    // ACA YA TENGO LA VARIABLE $usuarioLogueado
+
+
 ?>
 <body>
         <?php
@@ -47,56 +55,56 @@
       </div>
       <div class="d-flex justify-content-around flex-wrap">
         <div class="col-xs-6 col-sm-3">
-          <a href="categorias.php"> 
+          <a href="categorias.php">
             <img class="mx-auto d-block" src="https://dafitistaticar-a.akamaihd.net//cms/promociones_251x251_40offcalzado_010618.jpg" alt="Botas" />
           </a>
           <h6 class="text-dark text-center">Botas</h6>
         </div>
 
         <div class="col-xs-6 col-sm-3">
-          <a href="categorias.php"> 
+          <a href="categorias.php">
             <img class="mx-auto d-block" src="https://dafitistaticar-a.akamaihd.net/cms/1009-onsitemasc-camisasjeanspant-25offextra.jpg" alt="Pantalones" />
           </a>
           <h6 class="text-dark text-center">Pantalones</h6>
         </div>
 
         <div class="col-xs-6 col-sm-3">
-          <a href="categorias.php"> 
+          <a href="categorias.php">
             <img class="mx-auto d-block" src="https://dafitistaticar-a.akamaihd.net/cms/1018-onsite-promociones-camisas-2x1099.jpg" alt="Camisas" />
           </a>
           <h6 class="text-dark text-center">Camisas</h6>
         </div>
 
         <div class="col-xs-6 col-sm-3">
-          <a href="categorias.php"> 
+          <a href="categorias.php">
             <img class="mx-auto d-block" src="https://dafitistaticar-a.akamaihd.net/cms/0727-onsite-calzado-zapasprem-desde1299.jpg" alt="Zapatillas" />
           </a>
           <h6 class="text-dark text-center">Zapatillas</h6>
         </div>
 
         <div class="col-xs-6 col-sm-3">
-          <a href="categorias.php"> 
+          <a href="categorias.php">
             <img class="mx-auto d-block" src="https://dafitistaticar-a.akamaihd.net/cms/promo_vestidos_030818.jpg" alt="Vestidos" />
           </a>
           <h6 class="text-dark text-center">Vestidos</h6>
         </div>
 
         <div class="col-xs-6 col-sm-3">
-          <a href="categorias.php"> 
+          <a href="categorias.php">
             <img class="mx-auto d-block" src="https://dafitistaticar-a.akamaihd.net/cms/1018-onsite-indumentaria_(1).jpg" alt="Buzos" />
           </a>
           <h6 class="text-dark text-center">Buzos</h6>
         </div>
 
         <div class="col-xs-6 col-sm-3">
-          <a href="categorias.php"> 
+          <a href="categorias.php">
             <img class="mx-auto d-block" src="https://dafitistaticar-a.akamaihd.net/cms/calzado_remerasmkp_171018b.jpg" alt="Remeras" />
           </a>
           <h6 class="text-dark text-center">Remeras</h6>
         </div>
 
         <div class="col-xs-6 col-sm-3">
-          <a href="categorias.php"> 
+          <a href="categorias.php">
             <img class="mx-auto d-block" src="https://dafitistaticar-a.akamaihd.net/cms/0827-masc-promociones-remesLD-2x749.jpg" alt="Remeras" />
           </a>
           <h6 class="text-dark text-center">Remeras</h6>

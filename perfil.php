@@ -1,5 +1,28 @@
 <?php
     require 'head.php';
+
+    //NO VA EL include("soporte.php"); PORQUE YA LO TENGO INCLUIDO EN EL HEAD
+
+		//$usuarioLogueado = $auth->usuarioLogueado($db); //NO VA PORQUE ESTA EN EL HEAD
+
+    // ACA YA TENGO LA VARIABLE $usuarioLogueado
+
+    if (!$auth->estaLogueado()) {
+      header("Location:index.php");
+      exit;
+    }
+
+
+    //GUARDO LOS DATOS DEL USUARIO EN VARIABLES
+    $nombre = $usuarioLogueado->getNombre();
+    $apellido = $usuarioLogueado->getApellido();
+    $email = $usuarioLogueado->getEmail();
+    $username = $usuarioLogueado->getUsername();
+    $userPais = $usuarioLogueado->getPais();
+    $password = $usuarioLogueado->getPassword();
+
+    //$foto = glob("images/avatars" . $usuarioLogueado->getEmail() . ".*")[0];
+
 ?>
 <body>
         <?php
@@ -17,6 +40,7 @@
       <div class="col-sm-3"><!--left col-->
         <div class="text-center">
           <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar img-circle img-thumbnail" alt="avatar">
+          <!-- <img src="<?php echo $foto;?>" class="avatar img-circle img-thumbnail" alt="avatar"> -->
           <h6>Sube tu foto...</h6>
           <div class="custom-file">
             <input type="file" class="custom-file-input text-center center-block" id="customFile" disabled>
@@ -36,11 +60,11 @@
             <div class="form-row">
               <div class="col">
                 <label><h6>Nombre:</h6></label>
-                <input type="text" class="form-control" name="nombre" placeholder="Nombre" required="required" disabled>
+                <input type="text" class="form-control" name="nombre" value="<?php echo $nombre;?>" disabled>
               </div>
               <div class="col">
                 <label><h6>Apellido:</h6></label>
-                <input type="text" class="form-control" name="apellido" placeholder="Apellido" required="required" disabled>
+                <input type="text" class="form-control" name="apellido" value="<?php echo $apellido;?>" disabled>
               </div>
             </div>
           </div>
@@ -49,15 +73,28 @@
             <div class="form-row">
               <div class="col">
                 <label><h6>Nombre de Usuario:</h6></label>
-                <input type="text" class="form-control" name="nombreUsuario" placeholder="pepekpo123" required="required" disabled>
+                <input type="text" class="form-control" name="username" value="<?php echo $username;?>" disabled>
               </div>
               <div class="col">
                 <label><h6>Pais:</h6></label>
-                <select id="inputState" class="form-control" name="userCountry" value="<?php echo $pais; ?>" disabled>
-                  <option>País...</option>
-                  <?php foreach ($paises as $key => $pais): ?>
-                  <option value="<?php echo $key; ?>"><?php echo $pais; ?></option>
-                  <?php endforeach; ?>
+                <select id="inputState" class="form-control" name="pais" value="<?php echo $pais; ?>" disabled>
+                    <?php foreach ($paises as $key => $pais) : ?>
+          						<?php if ($key == $_POST["pais"]) : ?>
+          							<option value="<?php echo $key; ?>" selected>
+                          <?php if ($_POST) {
+                            //PARA PERSISTENCIA DE DATOS
+                            echo $pais;
+                          } else {
+                            //PARA TENER EL PAIS DEL USUARIO CARGADO
+                            echo $userPais;
+
+                          }
+                           ?>
+                        </option>
+          						<?php else: ?>
+          							<option value="<?php echo $key; ?>"><?php echo $pais; ?></option>
+          						<?php endif; ?>
+          					<?php endforeach; ?>
                 </select>
               </div>
             </div>
@@ -66,7 +103,7 @@
           <div class="form-group">
             <div class="col-xs-6">
               <label><h6>Email:</h6></label>
-              <input type="email" class="form-control" name="userMail" placeholder="Ingrese su email" disabled>
+              <input type="email" class="form-control" name="email" value="<?php echo $email;?>" disabled>
             </div>
           </div>
 
@@ -74,11 +111,11 @@
             <div class="form-row">
               <div class="col">
                 <label><h6>Contraseña:</h6></label>
-                <input type="text" class="form-control" name="userPass" required="required" disabled>
+                <input type="text" class="form-control" name="password" disabled>
               </div>
               <div class="col">
                 <label><h6>Confirmar contraseña:</h6></label>
-                <input type="text" class="form-control" name="userPassR" required="required" disabled>
+                <input type="text" class="form-control" name="passwordR" disabled>
               </div>
             </div>
           </div>
@@ -86,7 +123,7 @@
           <div class="form-group">
             <div class="col-xs-12">
               <br>
-              <button class="btn btn-success float-right" type="submit">Guardar cambios</button>
+              <button class="btn btn-success float-right" type="submit" disabled>Guardar cambios</button>
               <!-- <button class="btn" type="reset">Resetear</button> -->
             </div>
           </div>

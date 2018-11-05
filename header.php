@@ -9,9 +9,9 @@
 
         <div class="collapse navbar-collapse justify-content-end" id="navbarsExampleDefault">
             <ul class="navbar-nav m-auto">
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link" href="index.php">Home</a>
-                </li>
+                </li> -->
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="categorias.php" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Categorias
@@ -29,17 +29,31 @@
                 <li class="nav-item">
                     <a class="nav-link" href="preguntas.php">FAQ</a>
                 </li>
-                <li class="nav-item dropdown my-auto">
-                  <a class="nav-link dropdown-toggle" href="perfil.php" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Mi cuenta
-                  </a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="perfil.php">Perfil</a>
-                    <a class="dropdown-item" href="#">Compras </a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="login.php">Cerrar Sesión</a>
-                  </div>
-                </li>
+                <!-- SI EL USUARIO ESTA LOGUEADO LE MUESTRO -->
+                <?php if ($auth->estaLogueado()): ?>
+                  <li class="nav-item dropdown my-auto ml-5">
+                    <a class="nav-link dropdown-toggle" href="perfil.php" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Mi cuenta
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="perfil.php">Perfil de <?=$usuarioLogueado->getUsername()?></a>
+                      <a class="dropdown-item" href="#">Compras </a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="logout.php">Cerrar Sesión</a>
+                    </div>
+                  </li>
+
+                  <!-- SI EL USUARIO NO ESTA LOGUEADO LE MUESTRO -->
+                <?php else: ?>
+                  <!-- LA SEPARACION DEL MENU ESTA HECHA CON ml-5 -->
+                  <li class="nav-item ml-5">
+                      <a class="nav-link" href="login.php">Log In</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="registro.php">Registro</a>
+                  </li>
+                <?php endif; ?>
+
             </ul>
 
             <form class="form-inline my-2 my-lg-0">
