@@ -78,8 +78,10 @@
 
       $email = $_POST["email"];
 
-      $usuario->guardarImagen($email);
-      $usuario = $db->guardarUsuario($usuario);
+      $imagen = $usuario->guardarImagen($email);
+      $usuario->setImagen($imagen);
+
+      $usuario = $db->guardarUsuario($usuario,$imagen);
 
       //LOGUEAR
       $auth->loguear($_POST["email"]);

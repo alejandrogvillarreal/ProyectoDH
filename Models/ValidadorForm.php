@@ -8,6 +8,7 @@
   {
 
       function validarLogin($post, DataBase $db) {
+
       $errores = [];
 
       foreach ($post as $clave => $valor) {
@@ -31,10 +32,7 @@
       } else if ($usuario != NULL) {
         //El usuario existe y puso contraseña
         // Tengo que validar que la contraseño que ingreso sea valida
-        ///////////////////////////////////////////////////////////////////////////////////////////////////
-                                            //NO FUNCIONA EL PASSWORD_VERIFY
-        ///////////////////////////////////////////////////////////////////////////////////////////////////
-        if (password_verify($post["password"], $usuario->getPassword())) {
+        if (!password_verify($post["password"], $usuario->getPassword())) {
           $errores["password"] = "La contraseña es incorrecta";
         }
       }

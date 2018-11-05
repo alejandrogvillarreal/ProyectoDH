@@ -20,8 +20,9 @@
     $username = $usuarioLogueado->getUsername();
     $userPais = $usuarioLogueado->getPais();
     $password = $usuarioLogueado->getPassword();
+    $imagen = $usuarioLogueado->getImagen();
+    var_dump($imagen);
 
-    //$foto = glob("images/avatars" . $usuarioLogueado->getEmail() . ".*")[0];
 
 ?>
 <body>
@@ -39,8 +40,8 @@
       <!-- ACA EMPIEZA LA SECCION DE LA IZQUIERDA DE LA PANTALLA (FOTO) -->
       <div class="col-sm-3"><!--left col-->
         <div class="text-center">
-          <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar img-circle img-thumbnail" alt="avatar">
-          <!-- <img src="<?php echo $foto;?>" class="avatar img-circle img-thumbnail" alt="avatar"> -->
+          <!-- <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar img-circle img-thumbnail" alt="avatar"> -->
+          <img src="images/avatars/<?php echo $imagen;?>" class="avatar img-circle img-thumbnail" alt="avatar">
           <h6>Sube tu foto...</h6>
           <div class="custom-file">
             <input type="file" class="custom-file-input text-center center-block" id="customFile" disabled>

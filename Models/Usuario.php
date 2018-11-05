@@ -11,7 +11,7 @@
     private $username;
     private $pais;
     private $password;
-    private $foto;
+    private $imagen;
 
     public function __construct($nombre, $apellido, $email, $username, $pais, $password, $id = null) {
       if ($id == null) {
@@ -85,6 +85,14 @@
       $this->password = $password;
     }
 
+    // SET Y GET DE PASSWORD
+    public function getImagen() {
+      return $this->imagen;
+    }
+    public function setImagen($imagen) {
+      $this->imagen = $imagen;
+    }
+
 
 
     public function guardarImagen($mail) {
@@ -106,6 +114,11 @@
 
         move_uploaded_file($desde, $miArchivo);
 
+        return $this->getEmail() . "." . $ext;
+      }
+      else {
+        $fotoDefault = "default.png";
+        return $fotoDefault;
       }
     }
   }

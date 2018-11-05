@@ -10,21 +10,20 @@ require_once("Models/Usuario.php");
     protected $conn;
 
     public function __construct() {
-      $dsn = 'mysql:host=localhost;dbname=proyecto_dh;
-      charset=utf8mb4;port=3306';
+      $dsn = 'mysql:host=localhost;dbname=proyecto_dh;charset=utf8mb4;';
       $user ="root";
-      $pass = "";
+      $pass = "root";
 
       try {
-        $this->conn = new PDO($dsn, $user, $pass);
+        $this->conn = new PDO($dsn, $user, $pass, [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
       } catch (Exception $e) {
         echo "La conexion a la base de datos falló: " . $e->getMessage();
       }
     }
 
-    function guardarUsuario(Usuario $usuario) {
-      $query = $this->conn->prepare("INSERT INTO usuarios(nombre,apellido,username,email,password,pais)
-                                            VALUES(:nombre,:apellido,:username,:email,:password,:pais)");
+    function guardarUsuario(Usuario $usuario, $imagen) {
+      $query = $this->conn->prepare("INSERT INTO usuarios(nombre,apellido,username,email,password,pais,imagen)
+                                            VALUES(:nombre,:apellido,:username,:email,:password,:pais,:imagen)");
 
       $query->bindValue(":nombre", $usuario->getNombre());
       $query->bindValue(":apellido", $usuario->getApellido());
@@ -32,6 +31,7 @@ require_once("Models/Usuario.php");
       $query->bindValue(":email", $usuario->getEmail());
       $query->bindValue(":password", $usuario->getPassword());
       $query->bindValue(":pais", $usuario->getPais());
+      $query->bindValue(":imagen", $usuario->getImagen());
 
       $query->execute();
 
@@ -39,7 +39,6 @@ require_once("Models/Usuario.php");
       $usuario->setId($id);
 
       return $usuario;
-
     }
 
 
@@ -55,7 +54,7 @@ require_once("Models/Usuario.php");
       if ($usuarioFormatoArray) {
         //SI TRAE UN RESULTADO CREO UN USUARIO Y LO RETORNA
         $usuario = new Usuario($usuarioFormatoArray["nombre"], $usuarioFormatoArray["apellido"], $usuarioFormatoArray["email"], $usuarioFormatoArray["username"], $usuarioFormatoArray["pais"], $usuarioFormatoArray["password"], $usuarioFormatoArray["id"]);
-
+        $usuario->setImagen($usuarioFormatoArray["imagen"]);
         return $usuario;
       }
       else {
