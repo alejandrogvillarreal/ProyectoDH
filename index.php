@@ -74,6 +74,22 @@
           </div>
 
           <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <h5 class="text-dark text-center">Remeras</h5>
+            <a href="categorias.php">
+              <img class="mx-auto d-block" src="https://dafitistaticar-a.akamaihd.net/cms/251x251_remeramangalarga_040918.jpg" alt="Remeras" />
+            </a>
+            <br>
+          </div>
+
+          <!-- <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <h5 class="text-dark text-center">Camperas</h5>
+            <a href="categorias.php">
+              <img class="mx-auto d-block" src="https://dafitistaticar-a.akamaihd.net/cms/promo_750ndu_170718.jpg" alt="Camperas" />
+            </a>
+            <br>
+          </div> -->
+
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
             <h5 class="text-dark text-center">Pantalones</h5>
             <a href="categorias.php">
               <!-- <img class="mx-auto d-block" src="https://dafitistaticar-a.akamaihd.net/cms/1009-onsitemasc-camisasjeanspant-25offextra.jpg" alt="Pantalones" /> -->
@@ -138,7 +154,7 @@
             <div class="col-12 col-sm-6 col-md-4 col-lg-3">
               <h5 class="text-dark text-center">Zapatillas</h5>
               <a href="categorias.php">
-                <img class="mx-auto d-block" src="https://dafitistaticar-a.akamaihd.net/cms/0727-onsite-calzado-zapasprem-desde1299.jpg" alt="Zapatillas" />
+                <img class="mx-auto d-block" src="https://dafitistaticar-a.akamaihd.net/cms/500calzado.jpg" alt="Zapatillas" />
               </a>
               <br>
             </div>
