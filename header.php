@@ -41,15 +41,17 @@
                         </button>
                     </div>
                 </div>
-                <ul class="navbar-nav m-auto">
-                <!-- SI EL USUARIO ESTA LOGUEADO LE MUESTRO -->
-                <?php if ($auth->estaLogueado()): ?>
-                  <li class="nav-item dropdown my-auto ml-5">
-                    <img src="images/avatars/<?php echo $usuarioLogueado->getImagen();;?>" alt="" class="imagen-redonda rounded-circle">
-                  </li>
-                  <li class="nav-item dropdown my-auto">
+            </form>
+            <ul class="navbar-nav m-auto">
+            <!-- SI EL USUARIO ESTA LOGUEADO LE MUESTRO -->
+            <?php if ($auth->estaLogueado()): ?>
+
+              <li class="nav-item dropdown my-auto">
+                <ul class="list-inline">
+                  <li class="list-inline-item"><img src="images/avatars/<?php echo $usuarioLogueado->getImagen();;?>" alt="" class="d-inline imagen-redonda rounded-circle"></li>
+                  <li class="list-inline-item">
                     <a class="nav-link dropdown-toggle" href="perfil.php" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Mi cuenta
+                    Mi cuenta
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                       <a class="dropdown-item" href="perfil.php">Perfil de <?=$usuarioLogueado->getUsername()?></a>
@@ -59,25 +61,25 @@
                       <a class="dropdown-item" href="logout.php">Cerrar Sesión</a>
                     </div>
                   </li>
-                  <li class="nav-item">
-                    <a class="btn btn-success btn-sm ml-3" href="carrito.php">
-                        <!--<i class="fa fa-shopping-cart"></i>--> <!-- Carrito --><img src="images/carrito.png">
-                        <span class="badge badge-light">3</span>
-                    </a>
-                  </li>
-                  <!-- SI EL USUARIO NO ESTA LOGUEADO LE MUESTRO -->
-                <?php else: ?>
-                  <!-- LA SEPARACION DEL MENU ESTA HECHA CON ml-5 -->
-                  <li class="nav-item ml-5">
-                      <a class="nav-link" href="login.php">Log In</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="registro.php">Registro</a>
-                  </li>
-                <?php endif; ?>
-                <ul>
-
-            </form>
+                </ul>
+              </li>
+              <li class="nav-item my-auto">
+                <a class="btn btn-success btn-sm" href="carrito.php">
+                    <!--<i class="fa fa-shopping-cart"></i>--> <!-- Carrito --><img src="images/carrito.png">
+                    <span class="badge badge-light">3</span>
+                </a>
+              </li>
+              <!-- SI EL USUARIO NO ESTA LOGUEADO LE MUESTRO -->
+            <?php else: ?>
+              <!-- LA SEPARACION DEL MENU ESTA HECHA CON ml-5 -->
+              <li class="nav-item">
+                  <a class="nav-link" href="login.php">Log In</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="registro.php">Registro</a>
+              </li>
+            <?php endif; ?>
+          </ul>
         </div>
     </div>
 </nav>
