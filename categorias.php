@@ -29,7 +29,7 @@
   <div class="container">
       <div class="row">
         <!-- ESTE ES EL MENU LATERAL IZQUIERDO -->
-          <div class="col-12 col-sm-3">
+          <div class="col-12 col-sm-4 col-md-3">
               <div class="card bg-light mb-3">
                   <div class="card-header bg-primary text-white text-uppercase">Categorias</div>
                   <ul class="list-group category_block">
@@ -56,7 +56,7 @@
           <!-- ACA EMPIEZA LA SECCION DERECHA DE LA PAGINA(PRODUCTOS) -->
           <div class="col">
               <div class="row">
-                  <div class="col-12 col-md-6 col-lg-4 mb-5">
+                  <div class="col-12 col-md-6 col-lg-4">
                       <div class="card">
                           <a href="producto.php">
                             <img class="card-img-top" src="images/ropa/Hombre/Buzos/buzo-1.jpg" alt="Card image cap">
@@ -75,7 +75,7 @@
                           </div>
                       </div>
                   </div>
-                  <div class="col-12 col-md-6 col-lg-4 mb-5">
+                  <div class="col-12 col-md-6 col-lg-4">
                       <div class="card">
                           <a href="producto.php">
                             <img class="card-img-top" src="images/ropa/Hombre/Buzos/buzo-2.jpg" alt="Card image cap">
@@ -94,7 +94,7 @@
                           </div>
                       </div>
                   </div>
-                  <div class="col-12 col-md-6 col-lg-4 mb-5">
+                  <div class="col-12 col-md-6 col-lg-4">
                       <div class="card">
                           <a href="producto.php">
                             <img class="card-img-top" src="images/ropa/Hombre/Buzos/buzo-3.jpg" alt="Card image cap">
@@ -113,7 +113,7 @@
                           </div>
                       </div>
                   </div>
-                  <div class="col-12 col-md-6 col-lg-4 mb-5">
+                  <div class="col-12 col-md-6 col-lg-4">
                       <div class="card">
                           <a href="producto.php">
                             <img class="card-img-top" src="images/ropa/Hombre/Buzos/buzo-4.jpg" alt="Card image cap">
@@ -132,7 +132,7 @@
                           </div>
                       </div>
                   </div>
-                  <div class="col-12 col-md-6 col-lg-4 mb-5">
+                  <div class="col-12 col-md-6 col-lg-4">
                       <div class="card">
                           <a href="producto.php">
                             <img class="card-img-top" src="images/ropa/Hombre/Buzos/buzo-5.jpg" alt="Card image cap">
@@ -151,7 +151,7 @@
                           </div>
                       </div>
                   </div>
-                  <div class="col-12 col-md-6 col-lg-4 mb-5">
+                  <div class="col-12 col-md-6 col-lg-4">
                       <div class="card">
                           <a href="producto.php">
                             <img class="card-img-top" src="images/ropa/Hombre/Buzos/buzo-6.jpg" alt="Card image cap">
