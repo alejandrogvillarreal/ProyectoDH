@@ -12,8 +12,8 @@
           <div class="col">
               <nav aria-label="breadcrumb">
                   <ol class="breadcrumb">
-                      <li class="breadcrumb-item"><a href="/">Home</a></li>
-                      <li class="breadcrumb-item"><a href="categoras.php">Categoria</a></li>
+                      <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+                      <li class="breadcrumb-item"><a href="categorias.php">Categoria</a></li>
                       <li class="breadcrumb-item active" aria-current="page">Producto</li>
                   </ol>
               </nav>
@@ -29,10 +29,11 @@
     <div class="row">
         <!-- SECCION DE LA IMAGEN -->
         <div class="col-12 col-lg-6">
-            <div class="card bg-light mb-3">
+            <div class="card bg-light">
                 <div class="card-body">
                     <a href="" data-toggle="modal" data-target="#productModal">
-                        <img class="img-fluid" src="https://dummyimage.com/800x800/55595c/fff" />
+                        <!-- <img class="img-fluid" src="https://dummyimage.com/800x800/55595c/fff" /> -->
+                        <img class="img-fluid img-thumbnail rounded mx-auto d-block" src="images/ropa/Hombre/Buzos/buzo-1.jpg" />
                     </a>
                 </div>
             </div>
@@ -41,7 +42,7 @@
 
         <!-- SECCION DEL PRODUCTO -->
         <div class="col-12 col-lg-6 add_to_cart_block">
-            <div class="card bg-light mb-3">
+            <div class="card bg-light">
                 <div class="card-body">
                    <h1>Camisa rayada</h1>
                     <span class="label label-primary">Vintage</span>

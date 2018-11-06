@@ -49,68 +49,114 @@
   <!-- ACA VAN LOS PRODUCTOS -->
 
     <div class="container">
-      <div class="col-md-12">
+      <div class="col-md-12 mb-5">
         <h1 class="text-center">Categorias</h1>
         <hr>
       </div>
-      <div class="d-flex justify-content-around flex-wrap">
+    </div>
+
+    <!-- ACA VA LA SECCION DE MUJERES -->
+    <div class="container">
+      <div class="col-md-12">
+        <h1 class="text-center">Mujeres</h1>
+        <hr>
+      </div>
+      <div class="d-flex flex-wrap justify-content-around">
         <div class="col-xs-6 col-sm-3">
+          <h5 class="text-dark text-center">Sandalias</h5>
           <a href="categorias.php">
-            <img class="mx-auto d-block" src="https://dafitistaticar-a.akamaihd.net//cms/promociones_251x251_40offcalzado_010618.jpg" alt="Botas" />
+            <img class="mx-auto d-block" src="https://dafitistaticar-a.akamaihd.net/cms/sandalias_ss19_140918.jpg" alt="Sandalias" />
           </a>
-          <h6 class="text-dark text-center">Botas</h6>
+          <br>
         </div>
 
         <div class="col-xs-6 col-sm-3">
+          <h5 class="text-dark text-center">Pantalones</h5>
           <a href="categorias.php">
-            <img class="mx-auto d-block" src="https://dafitistaticar-a.akamaihd.net/cms/1009-onsitemasc-camisasjeanspant-25offextra.jpg" alt="Pantalones" />
+            <!-- <img class="mx-auto d-block" src="https://dafitistaticar-a.akamaihd.net/cms/1009-onsitemasc-camisasjeanspant-25offextra.jpg" alt="Pantalones" /> -->
+            <img class="mx-auto d-block" src="https://dafitistaticar-a.akamaihd.net/cms/cybermonday18/desktop/Femenino/CM_onsite_jeans231018.jpg" alt="Pantalones" />
           </a>
-          <h6 class="text-dark text-center">Pantalones</h6>
+          <br>
         </div>
 
         <div class="col-xs-6 col-sm-3">
+          <h5 class="text-dark text-center">Camisas</h5>
           <a href="categorias.php">
-            <img class="mx-auto d-block" src="https://dafitistaticar-a.akamaihd.net/cms/1018-onsite-promociones-camisas-2x1099.jpg" alt="Camisas" />
+            <img class="mx-auto d-block" src="https://dafitistaticar-a.akamaihd.net/cms/promo_bllusas_140818.jpg" alt="Camisas" />
           </a>
-          <h6 class="text-dark text-center">Camisas</h6>
+          <br>
         </div>
 
         <div class="col-xs-6 col-sm-3">
+          <h5 class="text-dark text-center">Blusas</h5>
           <a href="categorias.php">
-            <img class="mx-auto d-block" src="https://dafitistaticar-a.akamaihd.net/cms/0727-onsite-calzado-zapasprem-desde1299.jpg" alt="Zapatillas" />
+            <img class="mx-auto d-block" src="https://dafitistaticar-a.akamaihd.net/cms/CM_onsite_blusashasta65_261018.jpg" alt="Camperas" />
           </a>
-          <h6 class="text-dark text-center">Zapatillas</h6>
+          <br>
         </div>
 
         <div class="col-xs-6 col-sm-3">
+          <h5 class="text-dark text-center">Vestidos</h5>
           <a href="categorias.php">
             <img class="mx-auto d-block" src="https://dafitistaticar-a.akamaihd.net/cms/promo_vestidos_030818.jpg" alt="Vestidos" />
           </a>
-          <h6 class="text-dark text-center">Vestidos</h6>
-        </div>
-
-        <div class="col-xs-6 col-sm-3">
-          <a href="categorias.php">
-            <img class="mx-auto d-block" src="https://dafitistaticar-a.akamaihd.net/cms/1018-onsite-indumentaria_(1).jpg" alt="Buzos" />
-          </a>
-          <h6 class="text-dark text-center">Buzos</h6>
-        </div>
-
-        <div class="col-xs-6 col-sm-3">
-          <a href="categorias.php">
-            <img class="mx-auto d-block" src="https://dafitistaticar-a.akamaihd.net/cms/calzado_remerasmkp_171018b.jpg" alt="Remeras" />
-          </a>
-          <h6 class="text-dark text-center">Remeras</h6>
-        </div>
-
-        <div class="col-xs-6 col-sm-3">
-          <a href="categorias.php">
-            <img class="mx-auto d-block" src="https://dafitistaticar-a.akamaihd.net/cms/0827-masc-promociones-remesLD-2x749.jpg" alt="Remeras" />
-          </a>
-          <h6 class="text-dark text-center">Remeras</h6>
+          <br>
         </div>
 
       </div>
+      <!-- CATEGORIAS DE MUJERES -->
+
+      <!-- CATEGORIAS DE HOMBRES -->
+      <div class="col-md-12">
+        <h1 class="text-center">Hombres</h1>
+        <hr>
+      </div>
+      <div class="d-flex flex-wrap justify-content-around">
+        <div class="col-xs-6 col-sm-3">
+          <h5 class="text-dark text-center">Pantalones</h5>
+          <a href="categorias.php">
+            <!-- <img class="mx-auto d-block" src="https://dafitistaticar-a.akamaihd.net/cms/1009-onsitemasc-camisasjeanspant-25offextra.jpg" alt="Pantalones" /> -->
+            <img class="mx-auto d-block" src="https://dafitistaticar-a.akamaihd.net/cms/0827-masc-promociones-pantalones.jpg" alt="Pantalones" />
+          </a>
+          <br>
+        </div>
+
+        <div class="col-xs-6 col-sm-3">
+          <h5 class="text-dark text-center">Camisas</h5>
+          <a href="categorias.php">
+            <img class="mx-auto d-block" src="https://dafitistaticar-a.akamaihd.net/cms/1018-onsite-promociones-camisas-2x1099.jpg" alt="Camisas" />
+          </a>
+          <br>
+        </div>
+
+        <div class="col-xs-6 col-sm-3">
+          <h5 class="text-dark text-center">Zapatillas</h5>
+          <a href="categorias.php">
+            <img class="mx-auto d-block" src="https://dafitistaticar-a.akamaihd.net/cms/0727-onsite-calzado-zapasprem-desde1299.jpg" alt="Zapatillas" />
+          </a>
+          <br>
+        </div>
+
+        <div class="col-xs-6 col-sm-3">
+          <h5 class="text-dark text-center">Buzos</h5>
+          <a href="categorias.php">
+            <img class="mx-auto d-block" src="https://dafitistaticar-a.akamaihd.net/cms/1018-onsite-buzospantyjeans-30offextra_(1).jpg" alt="Buzos" />
+          </a>
+          <br>
+        </div>
+
+        <div class="col-xs-6 col-sm-3">
+          <h5 class="text-dark text-center">Remeras</h5>
+          <a href="categorias.php">
+            <img class="mx-auto d-block" src="https://dafitistaticar-a.akamaihd.net/cms/1003-onsite-remeras-h.jpg" alt="Remeras" />
+          </a>
+          <br>
+        </div>
+
+      </div>
+      <!-- TERMINA LA CATEGORIA DE HOMBRES -->
+
+
     </div>
 
   <!-- ACA TERMINA DE SECCION DE LOS PRODUCTOS -->

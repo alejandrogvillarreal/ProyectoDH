@@ -45,49 +45,8 @@
         <h1 class="text-center">Iniciar Sesion</h1>
         <hr>
       </div>
-      <!-- ACA EMPIEZA LA COLUMNA IZQUIERA DE LA PANTALLA (FORM)-->
-      <div class="col-md-4 login-sec">
 
-
-        <form class="login-form" action="" method="post" enctype="multipart/form-data">
-          <div class="form-group">
-            <label>Email</label>
-            <input type="email" class="form-control" placeholder="" name="email" value="<?php echo $email; ?>">
-          </div>
-          <div class="form-group">
-            <label>Password</label>
-            <input type="password" class="form-control" placeholder="" name="password">
-          </div>
-          <div class="form-check">
-            <label class="form-check-label">
-            <input type="checkbox" class="form-check-input" name="recordame">
-            <small>Recordarme</small>
-            </label>
-          </div>
-          <button type="submit" class="btn btn-success float-right">Ingresar</button>
-        </form>
-
-
-        <br><br><br>
-        <div class="etc-login-form">
-          <div class="text-center">Olvidaste tu contraseña? <a href="registro.php">Click Acá</a></div>
-          <div class="text-center">Aún no tenes cuenta? <a href="registro.php">Registrate acá</a></div>
-        </div>
-
-        <!-- PARA IMPRIMIR LOS ERRORES -->
-        <ul class="errores">
-    		<?php foreach ($errores as $error) : ?>
-    			<li>
-    				<?=$error?>
-    			</li>
-    		<?php endforeach; ?>
-    		</ul>
-
-
-      </div>
-      <!-- ACA TERMINA LA COLUMNA IZQUIERA DE LA PANTALLA (FORM)-->
-
-      <!-- ACA EMPIEZA LA COLUMNA DERECHA DE LA PANTALLA (FOTOS)-->
+      <!-- ACA EMPIEZA LA COLUMNA IZQUIERDA DE LA PANTALLA (FOTOS)-->
       <div class="col-md-8 banner-sec">
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
           <ol class="carousel-indicators">
@@ -126,7 +85,48 @@
           </div>
         </div>
       </div>
-      <!-- ACA TERMINA LA COLUMNA DERECHA DE LA PANTALLA (FOTOS)-->
+      <!-- ACA TERMINA LA COLUMNA IZQUIERDA DE LA PANTALLA (FOTOS)-->
+      <!-- ACA EMPIEZA LA COLUMNA DERECHA DE LA PANTALLA (FORM)-->
+      <div class="col-md-4 login-sec">
+
+
+        <form class="login-form" action="" method="post" enctype="multipart/form-data">
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" class="form-control" placeholder="" name="email" value="<?php echo $email; ?>">
+          </div>
+          <div class="form-group">
+            <label>Password</label>
+            <input type="password" class="form-control" placeholder="" name="password">
+          </div>
+          <div class="form-check">
+            <label class="form-check-label">
+            <input type="checkbox" class="form-check-input" name="recordame">
+            <small>Recordarme</small>
+            </label>
+          </div>
+          <button type="submit" class="btn btn-success float-right">Ingresar</button>
+        </form>
+
+
+        <br><br><br>
+        <div class="etc-login-form">
+          <div class="text-center">Olvidaste tu contraseña? <a href="olvidoPassword.php">Click Acá</a></div>
+          <div class="text-center">Aún no tenes cuenta? <a href="registro.php">Registrate acá</a></div>
+        </div>
+
+        <!-- PARA IMPRIMIR LOS ERRORES -->
+        <ul class="errores">
+    		<?php foreach ($errores as $error) : ?>
+    			<li>
+    				<?=$error?>
+    			</li>
+    		<?php endforeach; ?>
+    		</ul>
+
+
+      </div>
+      <!-- ACA TERMINA LA COLUMNA DERECHA DE LA PANTALLA (FORM)-->
     </div>
   </div>
 </section>

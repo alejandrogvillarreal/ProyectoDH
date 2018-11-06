@@ -73,7 +73,7 @@
 
     <!-- Copyright -->
     <div class="footer-copyright text-center text-black-50 py-3">© 2018 Copyright:
-      <a class="dark-grey-text" href="https://mdbootstrap.com/bootstrap-tutorial/"> NuestroNombre.com</a>
+      <a class="dark-grey-text" href="index.php"> NuestroNombre.com</a>
     </div>
     <!-- Copyright -->
 

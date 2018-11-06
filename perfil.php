@@ -21,7 +21,7 @@
     $userPais = $usuarioLogueado->getPais();
     $password = $usuarioLogueado->getPassword();
     $imagen = $usuarioLogueado->getImagen();
-    var_dump($imagen);
+    //var_dump($imagen);
 
 
 ?>

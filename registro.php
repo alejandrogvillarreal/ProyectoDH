@@ -106,7 +106,49 @@
         <h1 class="text-center">Registro</h1>
         <hr>
       </div>
-        <!-- ACA EMPIEZA LA COLUMNA IZQUIERA DE LA PANTALLA (FORM)-->
+
+        <!-- ACA EMPIEZA LA COLUMNA IZQUIERDA DE LA PANTALLA (FOTOS)-->
+      <div class="col-md-8 banner-sec">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner" role="listbox">
+            <div class="carousel-item active">
+              <img class="d-block img-fluid" src="images/carrousel-form-1.jpeg" alt="First slide">
+              <div class="carousel-caption d-none d-md-block">
+                <div class="banner-text">
+                  <h2>Tenemos la mejor ropa</h2>
+                  <p>SARASA SARASASARASA SARASA SARASA SARASA SARASASARASASARASA SARASA SARASA SARASA</p>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img class="d-block img-fluid" src="images/carrousel-form-2.jpeg" alt="First slide">
+              <div class="carousel-caption d-none d-md-block">
+                <div class="banner-text">
+                  <h2>Tenemos la mejor ropa</h2>
+                  <p>SARASA SARASASARASA SARASA SARASA SARASA SARASASARASASARASA SARASA SARASA SARASA</p>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img class="d-block img-fluid" src="images/carrousel-form-3.jpeg" alt="First slide">
+              <div class="carousel-caption d-none d-md-block">
+                <div class="banner-text">
+                  <h2>Tenemos la mejor ropa</h2>
+                  <p>SARASA SARASASARASA SARASA SARASA SARASA SARASASARASASARASA SARASA SARASA SARASA</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ACA TERMINA LA COLUMNA IZQUIERDA DE LA PANTALLA (FOTOS)-->
+
+      <!-- ACA EMPIEZA LA COLUMNA DERECHA DE LA PANTALLA (FORM)-->
       <div class="col-md-4 login-sec">
         <form class="login-form" action="" method="post" enctype="multipart/form-data">
         <div class="form-group">
@@ -194,49 +236,7 @@
         <?php endforeach; ?>
         </ul>
       </div>
-        <!-- ACA TERMINA LA COLUMNA IZQUIERA DE LA PANTALLA (FORM)-->
-
-
-          <!-- ACA EMPIEZA LA COLUMNA DERECHA DE LA PANTALLA (FOTOS)-->
-      <div class="col-md-8 banner-sec">
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-          <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-          </ol>
-          <div class="carousel-inner" role="listbox">
-            <div class="carousel-item active">
-              <img class="d-block img-fluid" src="images/carrousel-form-1.jpeg" alt="First slide">
-              <div class="carousel-caption d-none d-md-block">
-                <div class="banner-text">
-                  <h2>Tenemos la mejor ropa</h2>
-                  <p>SARASA SARASASARASA SARASA SARASA SARASA SARASASARASASARASA SARASA SARASA SARASA</p>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img class="d-block img-fluid" src="images/carrousel-form-2.jpeg" alt="First slide">
-              <div class="carousel-caption d-none d-md-block">
-                <div class="banner-text">
-                  <h2>Tenemos la mejor ropa</h2>
-                  <p>SARASA SARASASARASA SARASA SARASA SARASA SARASASARASASARASA SARASA SARASA SARASA</p>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img class="d-block img-fluid" src="images/carrousel-form-3.jpeg" alt="First slide">
-              <div class="carousel-caption d-none d-md-block">
-                <div class="banner-text">
-                  <h2>Tenemos la mejor ropa</h2>
-                  <p>SARASA SARASASARASA SARASA SARASA SARASA SARASASARASASARASA SARASA SARASA SARASA</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- ACA TERMINA LA COLUMNA DERECHA DE LA PANTALLA (FOTOS)-->
+        <!-- ACA TERMINA LA COLUMNA DERECHA DE LA PANTALLA (FORM)-->
     </div>
   </div>
 </section>
