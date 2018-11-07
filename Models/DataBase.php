@@ -79,7 +79,6 @@ require_once("Models/Usuario.php");
                                       SET s.password = '{$nuevaPassword}'
                                       WHERE s.id = {$idUsuario}
                                       ");
-
       //retorno el id unico
       return $aleatorio;
     }

@@ -51,7 +51,6 @@
           ]
       ]);
 
-
       $usuario = $db->buscarPorMail($_POST["email"]);
       $nuevaPassword = $db->generarNuevaPassword($usuario);
 
