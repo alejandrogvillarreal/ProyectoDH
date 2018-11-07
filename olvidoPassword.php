@@ -7,7 +7,7 @@
 ?>
 
   <?php
-  require 'php-mailer-master/PHPMailerAutoload.php';
+  require 'Models/php-mailer-master/PHPMailerAutoload.php';
 
 //////////////////////////////////7
   //VARIABLES
