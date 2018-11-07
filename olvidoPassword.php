@@ -16,14 +16,12 @@
   $errores = [];
 
 	if ($_POST) {
-		// $errores = $validator->validarLogin($_POST,$db);
-    //validar email(si va!)
+		$errores = $validator->validarEmail($_POST,$db);
 
     // SI NO HAY ERROR DE EMAIL GUARDO EL EMAIL EN UNA VARIABLE PARA PERSISTIR LOS DATOS
-    // if (!isset($errores["email"])) {
-       $email = $_POST["email"];
-    // }
-    // si va!!
+    if (!isset($errores["email"])) {
+      $email = $_POST["email"];
+    }
 
 		if (count($errores) == 0) {
 
@@ -52,9 +50,16 @@
               'allow_self_signed' => true
           ]
       ]);
+
+
+      $usuario = $db->buscarPorMail($_POST["email"]);
+      $nuevaPassword = $db->generarNuevaPassword($usuario);
+
+
       $mail->Subject = 'Solicitud para cambiar la contrase'. utf8_decode("ñ") . 'a';
-      $mail->Body    = 'Tu nueva contrase'. utf8_decode("ñ") .'a es (string aleatorio). Ingresá a tu cuenta y cambia la contrase'. utf8_decode("ñ") .'a' ;
-		}
+      $mail->Body    = 'Tu nueva contrase'. utf8_decode("ñ") .'a es:  ' . $nuevaPassword . '  . Copi' . utf8_decode("á") . ' y peg' . utf8_decode("á") . ' el codigo para ingresar tu cuenta y cambia la contrase'. utf8_decode("ñ") .'a' ;
+
+    }
 	}
 
 
@@ -80,7 +85,7 @@
               <label>Email</label>
               <input type="email" class="form-control" placeholder="" name="email" value="">
                <?php
-                if (isset($_POST['email'])) {
+                if (isset($_POST['email']) && !isset($errores["email"])) {
                   if(!$mail->send()) {
                     echo 'No se pudo enviar el mensaje';
                     echo 'Mailer Error: ' . $mail->ErrorInfo;
@@ -102,6 +107,16 @@
             </div>-->
             <button type="submit" class="btn btn-success float-right">Nueva contraseña</button>
           </form>
+
+          <!-- PARA IMPRIMIR LOS ERRORES -->
+          <ul class="errores">
+      		<?php foreach ($errores as $error) : ?>
+      			<li>
+      				<?=$error?>
+      			</li>
+      		<?php endforeach; ?>
+      		</ul>
+
 
         </div>
         <!-- ACA TERMINA LA COLUMNA IZQUIERA DE LA PANTALLA (FORM)-->

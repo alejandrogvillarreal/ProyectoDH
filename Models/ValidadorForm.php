@@ -123,4 +123,26 @@
 
       return $errores;
     }
+
+    ///////////////////////////////////////////////////////////////////////////////////////
+
+    function validarEmail($post, DataBase $db) {
+
+    $errores = [];
+
+    $post['email'] = trim($post['email']);
+
+
+    if ($post["email"] == "") {
+      $errores["email"] = "Por favor ingrese su email";
+    }
+    else if (filter_var($post["email"], FILTER_VALIDATE_EMAIL) == false) {
+      $errores["email"] = "Formato de email inválido";
+    } else if ($db->buscarPorMail($post["email"]) == NULL) {
+      $errores["email"] = "El usuario no está registrado";
+    }
+
+    
+    return $errores;
+  }
   }

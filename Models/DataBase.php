@@ -63,6 +63,27 @@ require_once("Models/Usuario.php");
 
     }
 
+    /////////////////////////////////////////////////////////////////////////////////
+
+
+
+    function generarNuevaPassword(Usuario $usuario) {
+      $idUsuario = $usuario->getId();
+      //genera un id unico, que es el que le vamos a pasar al usuario por mail
+      $aleatorio = uniqid();
+      //debo hashear la contraseña para que se guarde hasheada y el password_verify ande
+      $nuevaPassword = password_hash($aleatorio, PASSWORD_DEFAULT);
+
+      //actualizo la contraseña
+      $query = $this->conn->query("UPDATE usuarios s
+                                      SET s.password = '{$nuevaPassword}'
+                                      WHERE s.id = {$idUsuario}
+                                      ");
+
+      //retorno el id unico
+      return $aleatorio;
+    }
+
     /*
     function traerTodos() {
       $query = $this->conn->prepare("Select * from usuarios");
