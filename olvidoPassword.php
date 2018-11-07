@@ -4,9 +4,41 @@
 <body>
         <?php
             require 'header.php';
-        ?>
 
+?>
 
+  <?php
+  require 'php-mailer-master/PHPMailerAutoload.php';
+
+  $mail = new PHPMailer;
+
+  //$mail->SMTPDebug = 2;                               // Enable verbose debug output
+
+  $mail->isSMTP();                                      // Set mailer to use SMTP
+  $mail->Host = 'smtp.gmail.com';  // especifico que el servidor de correo sea por Gmail
+  $mail->SMTPAuth = true;                               // Enable SMTP authentication
+  $mail->Username = 'proyectodh1111@gmail.com';                 // Gmail ficticio que cree previamente
+  $mail->Password = 'proyecto_dh1234';                           // Poner clave real de email
+  $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+  $mail->Port = 587;                                    // TCP Puerto
+
+  $mail->setFrom('proyectodh1111@gmail.com'); // El mail ficticio envia el mensaje
+  $mail->addAddress('proyectodh1111@gmail.com');        // Quien lo recibe, deberia ir el email que llegue por post
+
+  // $mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
+  // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
+  // $mail->isHTML(true);                                  // Set email format to HTML
+  $mail->smtpConnect([
+      'ssl' => [
+          'verify_peer' => false,
+          'verify_peer_name' => false,
+          'allow_self_signed' => true
+      ]
+  ]);
+  $mail->Subject = 'Solicitud para cambiar la contrase'. utf8_decode("ñ") . 'a';
+  $mail->Body    = 'Haz click en el siguiente enlace para reestablecer tu nueva contrase'. utf8_decode("ñ") .'a';
+
+  ?>
   <!-- ACA VA OLVIDO DE PASSWORD -->
 
   <section class="login-block">
@@ -23,8 +55,16 @@
             <div class="form-group">
               <label>Email</label>
               <input type="email" class="form-control" placeholder="" name="email" value="">
+               <?php
+                if(!$mail->send()) {
+              echo 'No se pudo enviar el mensaje';
+              echo 'Mailer Error: ' . $mail->ErrorInfo;
+          } else {
+              echo 'Hemos enviado un mensaje para cambiar la contraseña al mail solicitado';
+          }
+              ?>
             </div>
-            <div class="form-group">
+            <!-- <div class="form-group">
               <label>Password</label>
               <input type="password" class="form-control" placeholder="" name="password">
             </div>
@@ -33,7 +73,7 @@
               <input type="checkbox" class="form-check-input" name="recordame">
               <small>Recordarme</small>
               </label>
-            </div>
+            </div>-->
             <button type="submit" class="btn btn-success float-right">Nueva contraseña</button>
           </form>
 
