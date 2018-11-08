@@ -66,7 +66,7 @@
 
       <!-- ACA EMPIEZA LA SECCION DE LA DERECHA DE LA PANTALLA (DATOS) -->
       <div class="col-sm-9">
-        <button class="btn btn-info float-right" type="submit">Editar Perfil</button>
+        <button class="btn btn-info float-right" type="submit" onclick="habilitarPerfil()" id="botonEditar">Editar Perfil</button>
         <br>
         <br>
         <form class="form" action="" method="post" id="registrationForm">
