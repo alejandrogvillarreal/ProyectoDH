@@ -7,6 +7,19 @@
 
     // ACA YA TENGO LA VARIABLE $usuarioLogueado
 
+    $paises =[
+    "AR"=>"Argentina",
+    "BO"=>"Bolivia",
+    "BR"=>"Brasil",
+    "CH"=>"Chile",
+    "CO"=>"Colombia",
+    "EC"=>"Ecuador",
+    "PAR"=>"Paraguay",
+    "PER"=>"Peru",
+    "URU"=>"Uruguay",
+    "VEN"=>"Venezuela"
+  ];
+
     if (!$auth->estaLogueado()) {
       header("Location:index.php");
       exit;
@@ -80,22 +93,12 @@
                 <label><h6>Pais:</h6></label>
                 <select id="inputState" class="form-control" name="pais" value="<?php echo $pais; ?>" disabled>
                     <?php foreach ($paises as $key => $pais) : ?>
-          						<?php if ($key == $_POST["pais"]) : ?>
-          							<option value="<?php echo $key; ?>" selected>
-                          <?php if ($_POST) {
-                            //PARA PERSISTENCIA DE DATOS
-                            echo $pais;
-                          } else {
-                            //PARA TENER EL PAIS DEL USUARIO CARGADO
-                            echo $userPais;
-
-                          }
-                           ?>
-                        </option>
-          						<?php else: ?>
-          							<option value="<?php echo $key; ?>"><?php echo $pais; ?></option>
-          						<?php endif; ?>
-          					<?php endforeach; ?>
+                    <?php if ($key == $_POST["pais"]) : ?>
+                      <option value="<?php echo $key;?>" <?php echo 'selected="selected" '; ?>><?php echo $pais; ?></option>
+                    <?php else: ?>
+                      <option <?php if($key == $userPais) echo 'selected="selected" '; ?> value="<?php echo $key; ?>"><?php echo $pais; ?></option>
+                    <?php endif; ?>
+                  <?php endforeach; ?>
                 </select>
               </div>
             </div>

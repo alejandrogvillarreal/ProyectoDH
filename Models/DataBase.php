@@ -12,7 +12,7 @@ require_once("Models/Usuario.php");
     public function __construct() {
       $dsn = 'mysql:host=localhost;dbname=proyecto_dh;charset=utf8mb4;';
       $user ="root";
-      $pass = "root";
+      $pass = "";
 
       try {
         $this->conn = new PDO($dsn, $user, $pass, [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
