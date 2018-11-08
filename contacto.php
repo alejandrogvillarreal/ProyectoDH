@@ -6,7 +6,48 @@
             require 'header.php';
 
         ?>
+<?php
+  require 'Models/php-mailer-master/PHPMailerAutoload.php';
 
+
+ $email = "";
+
+  $errores = [];
+
+	if ($_POST) {
+
+
+      $mail = new PHPMailer;
+
+      //$mail->SMTPDebug = 2;                               // Enable verbose debug output
+
+      $mail->isSMTP();                                      // Set mailer to use SMTP
+      $mail->Host = 'smtp.gmail.com';  // especifico que el servidor de correo sea por Gmail
+      $mail->SMTPAuth = true;                               // Enable SMTP authentication
+      $mail->Username = 'proyectodh1111@gmail.com';                 // Gmail ficticio que cree previamente
+      $mail->Password = 'proyecto_dh1234';                           // Poner clave real de email
+      $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+      $mail->Port = 587;                                    // TCP Puerto
+
+      $mail->setFrom($email); // El mail ficticio envia el mensaje
+      $mail->addAddress('proyectodh1111@gmail.com');        // Quien lo recibe, deberia ir el email que llegue por post
+
+      // $mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
+      // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
+      // $mail->isHTML(true);                                  // Set email format to HTML
+      $mail->smtpConnect([
+          'ssl' => [
+              'verify_peer' => false,
+              'verify_peer_name' => false,
+              'allow_self_signed' => true
+          ]
+      ]);
+      $mail->Subject = 'Consulta de usuario';
+      $mail->Body    = $_POST['texto']. ' Enviado por '. $_POST['userMail'];
+
+  }
+      
+  ?>
 <!-- SECCION DE CONTACTO -->
 
 <div class="container">
@@ -35,6 +76,14 @@
           </div>
           <textarea class="form-control" placeholder="Dejanos tu mensaje..." rows="8" name="texto"></textarea>
           <br>
+          <?php if (isset($_POST['userMail']) && !isset($errores["userMail"])) {
+                  if(!$mail->send()) {
+                    echo 'No se pudo enviar el mensaje';
+                    echo 'Mailer Error: ' . $mail->ErrorInfo;
+                  } else {
+                    echo 'Mensaje enviado con exito. Prontor recibira su respuesta';
+                  }
+                }?>
           <button type="submit" class="btn btn-success float-right">Contactar</button>
         </form>
       </div>
