@@ -1,5 +1,4 @@
-
-var inputsFormulario = document.getElementById('registrationForm').querySelectorAll('input');
+var inputsFormulario = document.getElementById('registrationForm').querySelectorAll('input'); // Selecciono todos los inputs con el id del formulario
 var guardarCampos = {};                                   //Creo un array vacio
 
 function persistirCampos() {                              // Debo crear una funcion para persistir los datos
@@ -7,7 +6,7 @@ function persistirCampos() {                              // Debo crear una func
     var campo = inputsFormulario[i];                      // los inputs que recorro los guardo en una variable
     guardarCampos[campo.name] = campo.value;              // Al ser un objeto HTML puedo acceder a su name y guardo el value de ese campo 
   }
-  return null
+  // return null;
 }
 
 function habilitarPerfil() {                              //Funcion con For para habilitar inputs y deshabilitar boton editar perfil
