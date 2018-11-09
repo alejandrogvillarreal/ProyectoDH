@@ -128,7 +128,7 @@
             <div class="col-xs-12">
               <br>
               <button class="btn btn-danger float-left" type="button" id="botonDescartar" onclick="descartarCambios()" hidden>Descartar</button>
-              <button class="btn btn-success float-right" type="submit" disabled>Guardar cambios</button>
+              <button class="btn btn-success float-right" type="submit" id="botonCambios" disabled>Guardar cambios</button>
               <!-- <button class="btn" type="reset">Resetear</button> -->
             </div>
           </div>
