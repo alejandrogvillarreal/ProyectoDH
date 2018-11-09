@@ -36,6 +36,57 @@
     $imagen = $usuarioLogueado->getImagen();
     //var_dump($imagen);
 
+    $errores = [];
+
+    if ($_POST) {
+      $errores = $validator->validarModificacion($_POST, $db);
+
+      if (!isset($errores["nombre"])) {
+        $nombre = $_POST["nombre"];
+      }
+      if (!isset($errores["apellido"])) {
+        $apellido = $_POST["apellido"];
+      }
+      if (!isset($errores["email"])) {
+        $email = $_POST["email"];
+      }
+      if (!isset($errores["username"])) {
+        $username = $_POST["username"];
+      }
+      if (!isset($errores["pais"])) {
+        $pais = $_POST["pais"];
+      }
+      if (!isset($errores["password"])) {
+        $password = $_POST["password"];
+      }
+      if (!isset($errores["passwordR"])) {
+        $passwordR = $_POST["passwordR"];
+      }
+      /*
+      if (!isset($errores["userPhoto"])) {
+        $userPhoto = $_POST["userPhoto"];
+      }
+    */
+
+      if (count($errores) == 0) {
+
+        $usuarioLogueado->setNombre($_POST["nombre"]);
+        $usuarioLogueado->setApellido($_POST["apellido"]);
+        $usuarioLogueado->setEmail($_POST["email"]);
+        $usuarioLogueado->setUsername($_POST["username"]);
+        $usuarioLogueado->setPais($_POST["pais"]);
+        $usuarioLogueado->setPassword(password_hash($_POST["password"], PASSWORD_DEFAULT));
+
+        if (isset($_FILES['userPhoto']) && !empty($_FILES["userPhoto"]["name"])) {
+          $imagen = $usuarioLogueado->guardarImagen($email);
+          $usuarioLogueado->setImagen($imagen);
+        }
+
+        $db->modificarUsuario($usuarioLogueado,$imagen);
+
+      }
+    }
+
 
 ?>
 <body>
@@ -51,25 +102,35 @@
     <hr>
     <div class="row">
       <!-- ACA EMPIEZA LA SECCION DE LA IZQUIERDA DE LA PANTALLA (FOTO) -->
-      <div class="col-sm-3"><!--left col-->
+      <div class="col-sm-3 mt-5"><!--left col-->
         <div class="text-center">
           <!-- <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar img-circle img-thumbnail" alt="avatar"> -->
           <img src="images/avatars/<?php echo $imagen;?>" class="avatar img-circle img-thumbnail" alt="avatar">
-          <h6>Sube tu foto...</h6>
-          <div class="custom-file">
-            <input type="file" class="custom-file-input text-center center-block" id="customFile" disabled>
-            <label class="custom-file-label text-left" for="customFile">Elegir</label>
-          </div>
+
+          <ul class="errores">
+          <?php foreach ($errores as $error) : ?>
+            <li>
+              <?=$error?>
+            </li>
+          <?php endforeach; ?>
+          </ul>
         </div>
       </div><!--/col-3-->
       <!-- ACA TERMINA LA SECCION DE LA IZQUIERDA DE LA PANTALLA (FOTO) -->
 
       <!-- ACA EMPIEZA LA SECCION DE LA DERECHA DE LA PANTALLA (DATOS) -->
       <div class="col-sm-9">
-        <button class="btn btn-info float-right" type="submit" onclick="habilitarPerfil()" id="botonEditar">Editar Perfil</button>
+        <button class="btn btn-info float-right" type="submit" id="botonEditar">Editar Perfil</button>
         <br>
         <br>
-        <form class="form" action="" method="post" id="registrationForm">
+        <form class="form perfil-form" action="" method="post" id="registrationForm" enctype="multipart/form-data">
+          <h6>Subí tu foto...</h6>
+          <div class="custom-file form-group">
+            <!-- <label>Avatar</label> -->
+            <input type="file" class="custom-file-input text-center center-block" id="customFile" name="userPhoto" disabled>
+            <label class="custom-file-label text-left" for="customFile">Elegir</label>
+            <span> <?php // echo $errorImg; ?></span>
+          </div>
           <div class="form-group">
             <div class="form-row">
               <div class="col">
@@ -115,11 +176,11 @@
             <div class="form-row">
               <div class="col">
                 <label><h6>Contraseña:</h6></label>
-                <input type="text" class="form-control" name="password" disabled>
+                <input type="password" class="form-control" name="password" value="<?php echo $apellido;?>" disabled>
               </div>
               <div class="col">
                 <label><h6>Confirmar contraseña:</h6></label>
-                <input type="text" class="form-control" name="passwordR" disabled>
+                <input type="password" class="form-control" name="passwordR" value="<?php echo $apellido;?>" disabled>
               </div>
             </div>
           </div>
@@ -127,12 +188,14 @@
           <div class="form-group">
             <div class="col-xs-12">
               <br>
-              <button class="btn btn-danger float-left" type="button" id="botonDescartar" onclick="descartarCambios()" hidden>Descartar</button>
-              <button class="btn btn-success float-right" type="submit" id="botonCambios" disabled>Guardar cambios</button>
+              <button class="btn btn-danger float-left" type="reset" id="botonDescartar" hidden>Descartar</button>
+              <button class="btn btn-success float-right" type="submit" id="botonGuardar" hidden>Guardar cambios</button>
               <!-- <button class="btn" type="reset">Resetear</button> -->
             </div>
           </div>
         </form>
+
+
       </div>
       <!-- ACA TERMINA LA SECCION DE LA DERECHA DE LA PANTALLA (DATOS) -->
     </div><!-- termina row -->

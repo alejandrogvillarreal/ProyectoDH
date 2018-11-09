@@ -41,6 +41,27 @@ require_once("Models/Usuario.php");
       return $usuario;
     }
 
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    function modificarUsuario(Usuario $usuario, $imagen) {
+      $query = $this->conn->prepare("UPDATE usuarios
+                                    SET nombre=:nombre, apellido=:apellido, username=:username, email=:email, password=:password, pais=:pais, imagen=:imagen
+                                    WHERE id=:id
+                                            ");
+
+      $query->bindValue(":id", $usuario->getId());
+      $query->bindValue(":nombre", $usuario->getNombre());
+      $query->bindValue(":apellido", $usuario->getApellido());
+      $query->bindValue(":username", $usuario->getUsername());
+      $query->bindValue(":email", $usuario->getEmail());
+      $query->bindValue(":password", $usuario->getPassword());
+      $query->bindValue(":pais", $usuario->getPais());
+      $query->bindValue(":imagen", $usuario->getImagen());
+
+      $query->execute();
+
+    }
+
 
     function buscarPorMail($email) {
       $query = $this->conn->prepare("Select * from usuarios where email = :email");
