@@ -124,13 +124,13 @@
         <br>
         <br>
         <form class="form perfil-form" action="" method="post" id="registrationForm" enctype="multipart/form-data">
-          <h6>Subí tu foto...</h6>
+          <!-- <h6>Subí tu foto...</h6>
           <div class="custom-file form-group">
-            <!-- <label>Avatar</label> -->
+            <label>Avatar</label>
             <input type="file" class="custom-file-input text-center center-block" id="customFile" name="userPhoto" disabled>
             <label class="custom-file-label text-left" for="customFile">Elegir</label>
             <span> <?php // echo $errorImg; ?></span>
-          </div>
+          </div> -->
           <div class="form-group">
             <div class="form-row">
               <div class="col">
@@ -186,13 +186,13 @@
             <div class="form-row">
               <div class="col">
                 <label><h6>Contraseña:</h6></label>
-                <input type="password" class="form-control" name="password" value="<?php echo $apellido;?>" disabled>
+                <input type="password" class="form-control" name="password" value="<?php echo $password;?>" disabled>
                 <div class="invalid-feedback">
                 </div>
               </div>
               <div class="col">
                 <label><h6>Confirmar contraseña:</h6></label>
-                <input type="password" class="form-control" name="passwordR" value="<?php echo $apellido;?>" disabled>
+                <input type="password" class="form-control" name="passwordR" value="<?php echo $password;?>" disabled>
                 <div class="invalid-feedback">
                 </div>
               </div>

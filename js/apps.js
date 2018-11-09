@@ -1,5 +1,6 @@
 window.onload = function(){
 
+    var regexEmail = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 
     var formPerfil = document.querySelector(".perfil-form");
     var elementos = formPerfil.elements;  //tengo una coleccion html
@@ -52,16 +53,27 @@ window.onload = function(){
 
     //antes de hacer enviar el form lo freno y valido
     formPerfil.addEventListener('submit',function(event){
-      event.preventDefault();
-      elementos.forEach(function(element){
-        element.addEventListener('blur',function(){
-          if (this.value=="") {
-            this.classList.add('is-invalid');
-            var div = document.querySelector('div[class="invalid-feedback"]');
-            div.innerHTML = 'Campo obligatorio';
-          }
+
+      if (
+        inputNombre.value.trim() === "" || inputNombre.value.length < 4 || inputNombre.value.length > 30 ||
+        inputApellido.value.trim() === "" || inputApellido.value.length < 4 || inputApellido.value.length > 30 ||
+        inputUsername.value.trim() === "" || inputUsername.value.length < 4 || inputUsername.value.length > 30 ||
+        inputEmail.value.trim() === "" || !regexEmail.test((inputEmail.value)) ||
+        inputPassword.value.trim() === "" || inputPassword.value.length < 4 || inputPassword.value.length > 30 ||
+        inputPasswordR.value.trim() === "" || inputPassword.value !== inputPasswordR.value
+        )
+      {
+        event.preventDefault();
+        elementos.forEach(function(element){
+            if (element.value == "") {
+              element.classList.add("is-invalid");
+              var div = element.parentElement.querySelector('.invalid-feedback');
+              console.log(div);
+              div.innerHTML = 'Campo obligatorio';
+            }
         });
-      });
+        alert("Error en algun campo");
+      }
     });
 
     //valido los campos
@@ -77,11 +89,11 @@ window.onload = function(){
     inputNombre.addEventListener('keyup',function(event){
       if ((this.value).length < 4) {
         this.classList.add('is-invalid');
-        var div = document.querySelectorAll('div[class="invalid-feedback"]');
+        var div = this.parentElement.querySelector('.invalid-feedback');
         div.innerHTML = 'El nombre es demasiado corto';
       }else if ((this.value).length >30) {
         this.classList.add('is-invalid');
-        var div = document.querySelectorAll('div[class="invalid-feedback"]');
+        var div = this.parentElement.querySelector('.invalid-feedback');
         div.innerHTML = 'El nombre es demasiado largo';
       }
       else {
@@ -94,12 +106,12 @@ window.onload = function(){
     inputApellido.addEventListener('keyup',function(event){
       if ((this.value).length < 4) {
         this.classList.add('is-invalid');
-        var div = document.querySelectorAll('div[class="invalid-feedback"]');
+        var div = this.parentElement.querySelector('.invalid-feedback');
         div.innerHTML = 'El apellido es demasiado corto';
       }
       else if ((this.value).length >30) {
         this.classList.add('is-invalid');
-        var div = document.querySelectorAll('div[class="invalid-feedback"]');
+      var div = this.parentElement.querySelector('.invalid-feedback');
         div.innerHTML = 'El apellido es demasiado largo';
       }
       else {
@@ -112,12 +124,12 @@ window.onload = function(){
     inputUsername.addEventListener('keyup',function(event){
       if ((this.value).length < 4) {
         this.classList.add('is-invalid');
-        var div = document.querySelectorAll('div[class="invalid-feedback"]');
+      var div = this.parentElement.querySelector('.invalid-feedback');
         div.innerHTML = 'El username es demasiado corto';
       }
       else if ((this.value).length >30) {
         this.classList.add('is-invalid');
-        var div = document.querySelectorAll('div[class="invalid-feedback"]');
+      var div = this.parentElement.querySelector('.invalid-feedback');
         div.innerHTML = 'El username es demasiado largo';
       }
       else {
@@ -126,12 +138,14 @@ window.onload = function(){
       }
     });
 
+
+
+
     //VALIDACION DEL EMAIL
     inputEmail.addEventListener('keyup',function(event){
-      var regexEmail = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
       if (!regexEmail.test((this.value))) {
         this.classList.add('is-invalid');
-        var div = document.querySelectorAll('div[class="invalid-feedback"]');
+      var div = this.parentElement.querySelector('.invalid-feedback');
         div.innerHTML = 'El formato de email es invalido';
       }
       else {
@@ -144,12 +158,12 @@ window.onload = function(){
     inputPassword.addEventListener('keyup',function(event){
       if ((this.value).length < 4) {
         this.classList.add('is-invalid');
-        var div = document.querySelectorAll('div[class="invalid-feedback"]');
+      var div = this.parentElement.querySelector('.invalid-feedback');
         div.innerHTML = 'El password es demasiado corto';
       }
       else if ((this.value).length >30) {
         this.classList.add('is-invalid');
-        var div = document.querySelectorAll('div[class="invalid-feedback"]');
+      var div = this.parentElement.querySelector('.invalid-feedback');
         div.innerHTML = 'El password es demasiado largo';
       }
       else {
@@ -162,7 +176,7 @@ window.onload = function(){
     inputPasswordR.addEventListener('keyup',function(event){
       if (this.value !== inputPassword.value) {
         this.classList.add('is-invalid');
-        var div = document.querySelectorAll('div[class="invalid-feedback"]');
+      var div = this.parentElement.querySelector('.invalid-feedback');
         div.innerHTML = 'Las password no coinciden';
       }
       else {
