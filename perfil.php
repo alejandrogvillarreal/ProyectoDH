@@ -136,10 +136,14 @@
               <div class="col">
                 <label><h6>Nombre:</h6></label>
                 <input type="text" class="form-control" name="nombre" value="<?php echo $nombre;?>" disabled>
+                <div class="invalid-feedback">
+                </div>
               </div>
               <div class="col">
                 <label><h6>Apellido:</h6></label>
                 <input type="text" class="form-control" name="apellido" value="<?php echo $apellido;?>" disabled>
+                <div class="invalid-feedback">
+                </div>
               </div>
             </div>
           </div>
@@ -149,6 +153,8 @@
               <div class="col">
                 <label><h6>Nombre de Usuario:</h6></label>
                 <input type="text" class="form-control" name="username" value="<?php echo $username;?>" disabled>
+                <div class="invalid-feedback">
+                </div>
               </div>
               <div class="col">
                 <label><h6>Pais:</h6></label>
@@ -161,6 +167,8 @@
                     <?php endif; ?>
                   <?php endforeach; ?>
                 </select>
+                <div class="invalid-feedback">
+                </div>
               </div>
             </div>
           </div>
@@ -169,6 +177,8 @@
             <div class="col-xs-6">
               <label><h6>Email:</h6></label>
               <input type="email" class="form-control" name="email" value="<?php echo $email;?>" disabled>
+              <div class="invalid-feedback">
+              </div>
             </div>
           </div>
 
@@ -177,10 +187,14 @@
               <div class="col">
                 <label><h6>Contraseña:</h6></label>
                 <input type="password" class="form-control" name="password" value="<?php echo $apellido;?>" disabled>
+                <div class="invalid-feedback">
+                </div>
               </div>
               <div class="col">
                 <label><h6>Confirmar contraseña:</h6></label>
                 <input type="password" class="form-control" name="passwordR" value="<?php echo $apellido;?>" disabled>
+                <div class="invalid-feedback">
+                </div>
               </div>
             </div>
           </div>
