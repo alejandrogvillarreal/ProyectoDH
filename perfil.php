@@ -186,17 +186,25 @@
             <div class="form-row">
               <div class="col">
                 <label><h6>Contraseña:</h6></label>
-                <input type="password" class="form-control" name="password" value="<?php echo $password;?>" disabled>
+                <input type="password" class="form-control" name="password" value="" disabled>
                 <div class="invalid-feedback">
                 </div>
               </div>
               <div class="col">
                 <label><h6>Confirmar contraseña:</h6></label>
-                <input type="password" class="form-control" name="passwordR" value="<?php echo $password;?>" disabled>
+                <input type="password" class="form-control" name="passwordR" value="" disabled>
                 <div class="invalid-feedback">
                 </div>
               </div>
             </div>
+          </div>
+
+
+          <h6>Subí tu foto...</h6>
+          <div class="custom-file form-group">
+            <input type="file" class="custom-file-input text-center center-block input-file-ale" id="customFile" name="userPhoto" disabled>
+            <label class="custom-file-label text-left" for="customFile">Elegir</label>
+            <span> <?php // echo $errorImg; ?></span>
           </div>
 
           <div class="form-group">
@@ -207,6 +215,9 @@
               <!-- <button class="btn" type="reset">Resetear</button> -->
             </div>
           </div>
+
+
+
         </form>
 
 

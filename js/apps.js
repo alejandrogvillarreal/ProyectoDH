@@ -7,12 +7,20 @@ window.onload = function(){
     elementos = Array.from(elementos);//array de elementos html
     elementos.pop();//saco el btn de reset
     elementos.pop();//saco el boton guardar cambios
+    elementos.pop();//saco el boton guardar cambios
 
 
     function habilitarEdicion(){
       elementos.forEach(function(element){
         element.removeAttribute("disabled");
       });
+
+      inputPass = document.querySelector('input[name="password"]');
+      inputPass.setAttribute("placeholder", "Ingresá tu contraseña para confirmar cambios");
+
+      inputFile = document.querySelector(".input-file-ale");
+      inputFile.removeAttribute("disabled");
+
       botonEditar = document.querySelector("#botonEditar"); // Desactivo el boton de editar perfil
       botonEditar.disabled = "disabled";
 
@@ -30,6 +38,17 @@ window.onload = function(){
         element.classList.remove("is-invalid");
         element.classList.remove("is-valid");
       });
+
+      inputPass = document.querySelector('input[name="password"]');
+      inputPass.setAttribute("placeholder", "");
+
+
+      inputFile = document.querySelector(".input-file-ale");
+      inputFile.setAttribute("disabled", "disabled");
+      inputFile.classList.remove("is-invalid");
+      inputFile.classList.remove("is-valid");
+
+
       botonEditar = document.querySelector("#botonEditar"); // Desactivo el boton de editar perfil
       botonEditar.removeAttribute("disabled");
 
@@ -72,6 +91,7 @@ window.onload = function(){
               div.innerHTML = 'Campo obligatorio';
             }
         });
+        console.log(elementos);
         alert("Error en algun campo");
       }
     });
