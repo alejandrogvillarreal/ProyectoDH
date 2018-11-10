@@ -29,7 +29,7 @@
       $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
       $mail->Port = 587;                                    // TCP Puerto
 
-      $mail->setFrom($email); // El mail ficticio envia el mensaje
+      $mail->setFrom($_POST['email']); // El mail ficticio envia el mensaje
       $mail->addAddress('proyectodh1111@gmail.com');        // Quien lo recibe, deberia ir el email que llegue por post
 
       // $mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
@@ -43,10 +43,10 @@
           ]
       ]);
       $mail->Subject = 'Consulta de usuario';
-      $mail->Body    = $_POST['texto']. ' Enviado por '. $_POST['userMail'];
+      $mail->Body    = $_POST['texto']. ' Enviado por '. $_POST['nombre'];
 
   }
-      
+
   ?>
 <!-- SECCION DE CONTACTO -->
 
@@ -69,14 +69,14 @@
           <div class="form-group">
             <div class="form-group">
               <label>Nombre</label>
-              <input type="text" class="form-control" placeholder="" name="userName">
+              <input type="text" class="form-control" placeholder="" name="nombre">
             </div>
             <label>Email</label>
-            <input type="email" class="form-control" placeholder="" name="userMail">
+            <input type="email" class="form-control" placeholder="" name="email">
           </div>
           <textarea class="form-control" placeholder="Dejanos tu mensaje..." rows="8" name="texto"></textarea>
           <br>
-          <?php if (isset($_POST['userMail']) && !isset($errores["userMail"])) {
+          <?php if (isset($_POST['email']) && !isset($errores["email"])) {
                   if(!$mail->send()) {
                     echo 'No se pudo enviar el mensaje';
                     echo 'Mailer Error: ' . $mail->ErrorInfo;
