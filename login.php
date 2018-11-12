@@ -94,10 +94,14 @@
           <div class="form-group">
             <label>Email</label>
             <input type="email" class="form-control" placeholder="" name="email" value="<?php echo $email; ?>">
+            <div class="invalid-feedback">
+            </div>
           </div>
           <div class="form-group">
             <label>Password</label>
             <input type="password" class="form-control" placeholder="" name="password">
+            <div class="invalid-feedback">
+            </div>
           </div>
           <div class="form-check">
             <label class="form-check-label">
@@ -121,6 +125,7 @@
     			<li>
     				<?=$error?>
     			</li>
+
     		<?php endforeach; ?>
     		</ul>
 
@@ -132,5 +137,7 @@
 </section>
 
     <?php include 'footer.php'; ?>
+    <!-- ESTE ES EL SCRIPT PARA LAS VALIDACIONES DEL LOGIN -->
+    <script src="js/login.js"></script>
 </body>
 </html>

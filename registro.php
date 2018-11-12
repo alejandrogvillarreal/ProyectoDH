@@ -150,17 +150,21 @@
 
       <!-- ACA EMPIEZA LA COLUMNA DERECHA DE LA PANTALLA (FORM)-->
       <div class="col-md-4 login-sec">
-        <form class="login-form" action="" method="post" enctype="multipart/form-data">
+        <form class="login-form registro-form" action="" method="post" enctype="multipart/form-data">
         <div class="form-group">
           <div class="form-row">
             <div class="col">
               <label>Nombre</label>
               <input type="text" class="form-control" name="nombre" value="<?php echo $nombre; ?>">
+              <div class="invalid-feedback">
+              </div>
               <span> <?php // echo $errorNombre; ?></span>
             </div>
             <div class="col">
               <label>Apellido</label>
               <input type="text" class="form-control" name="apellido" value="<?php echo $apellido; ?>">
+              <div class="invalid-feedback">
+              </div>
               <span> <?php // echo $errorApellido; ?></span>
             </div>
           </div>
@@ -170,6 +174,8 @@
               <div class="col">
                 <label>Nombre de Usuario</label>
                 <input type="text" class="form-control" name="username" placeholder="ej: Josesito" value="<?php echo $username; ?>">
+                <div class="invalid-feedback">
+                </div>
                 <span> <?php // echo $errorusername; ?></span>
               </div>
               <div class="col">
@@ -183,6 +189,8 @@
         						<?php endif; ?>
         					<?php endforeach; ?>
                 </select>
+                <div class="invalid-feedback">
+                </div>
                 <span> <?php // echo $errorPais; ?></span>
               </div>
             </div>
@@ -190,6 +198,8 @@
           <div class="form-group">
             <label>Email</label>
             <input type="email" class="form-control" placeholder="ejemplo@gmail.com" name="email" value="<?php echo $email; ?>">
+            <div class="invalid-feedback">
+            </div>
             <span> <?php // echo $errorEmail; ?></span>
           </div>
           <div class="form-group">
@@ -197,18 +207,22 @@
               <div class="col">
                 <label>Contraseña</label>
                 <input type="password" class="form-control" name="password">
+                <div class="invalid-feedback">
+                </div>
                 <span> <?php // echo $errorContrasena; ?></span>
               </div>
               <div class="col">
                 <label>Repetir Contraseña</label>
                 <input type="password" class="form-control" name="passwordR">
+                <div class="invalid-feedback">
+                </div>
                 <span> <?php // echo $errorContrasenaR; ?></span>
               </div>
             </div>
           </div>
           <div class="custom-file form-group">
             <label>Avatar</label>
-            <input type="file" class="custom-file-input text-center center-block" id="customFile"  name="userPhoto">
+            <input type="file" class="custom-file-input text-center center-block input-file-ale" id="customFile"  name="userPhoto">
             <label class="custom-file-label text-left" for="customFile">Elegir</label>
             <span> <?php // echo $errorImg; ?></span>
           </div>
@@ -220,7 +234,7 @@
           </div>
           <div class="form-group">
             <button class="btn btn-success float-right" type="submit">Registrarse</button>
-            <button class="btn float-right mr-3" type="reset">Resetear</button>
+            <button class="btn float-right mr-3" type="reset" id="botonDescartar">Resetear</button>
           </div>
         </form>
         <br>
@@ -242,5 +256,7 @@
 </section>
 
     <?php include 'footer.php'; ?>
+    <!-- ESTE ES EL SCRIPT PARA LAS VALIDACIONES DEL REGISTRO -->
+    <script src="js/registro.js"></script>
 </body>
 </html>

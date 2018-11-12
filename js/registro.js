@@ -2,78 +2,31 @@ window.onload = function(){
 
     var regexEmail = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 
-    var formPerfil = document.querySelector(".perfil-form");
-    var elementos = formPerfil.elements;  //tengo una coleccion html
+    var formRegistro = document.querySelector(".registro-form");
+    var elementos = formRegistro.elements;  //tengo una coleccion html
     elementos = Array.from(elementos);//array de elementos html
+    elementos.pop();//saco el boton inputFile
+    elementos.pop();//saco el checkbox de recordarme
     elementos.pop();//saco el btn de reset
     elementos.pop();//saco el boton guardar cambios
-    elementos.pop();//saco el boton guardar cambios
-
-
-    function habilitarEdicion(){
-      elementos.forEach(function(element){
-        element.removeAttribute("disabled");
-      });
-
-      inputPass = document.querySelector('input[name="password"]');
-      //LO PONGO EN ROJO PARA QUE EL USUARIO SE DE CUENTA FACILMENTE QUE DEBE COMPLETAR EL CAMPO
-      inputPass.classList.add('is-invalid');
-      inputPass.setAttribute("placeholder", "Ingresá tu contraseña para confirmar cambios");
-
-      inputFile = document.querySelector(".input-file-ale");
-      inputFile.removeAttribute("disabled");
-
-      botonEditar = document.querySelector("#botonEditar"); // Desactivo el boton de editar perfil
-      botonEditar.disabled = "disabled";
-
-      botonDescartar = document.querySelector("#botonDescartar");
-      botonDescartar.removeAttribute("hidden");                   // Remueve el atributo hidden del boton descartar
-
-      botonGuardar = document.querySelector("#botonGuardar");
-      botonGuardar.removeAttribute("hidden");                   // Remueve el atributo hidden del boton guardar
-    }
-
 
     function descartarEdicion(){
       elementos.forEach(function(element){
-        element.setAttribute("disabled", "disabled");
         element.classList.remove("is-invalid");
         element.classList.remove("is-valid");
       });
 
-      inputPass = document.querySelector('input[name="password"]');
-      inputPass.setAttribute("placeholder", "");
-
-
-      inputFile = document.querySelector(".input-file-ale");
-      inputFile.setAttribute("disabled", "disabled");
-      inputFile.classList.remove("is-invalid");
-      inputFile.classList.remove("is-valid");
-
-
-      botonEditar = document.querySelector("#botonEditar"); // Desactivo el boton de editar perfil
-      botonEditar.removeAttribute("disabled");
-
-      botonDescartar = document.querySelector("#botonDescartar");
-      botonDescartar.setAttribute("hidden", "hidden");          // Vuelvo a esconder el boton descartar
-
-      botonGuardar = document.querySelector("#botonGuardar");
-      botonGuardar.setAttribute("hidden", "hidden");          // Vuelvo a esconder el boton descartar
+      // inputFile = document.querySelector(".input-file-ale");
+      // inputFile.classList.remove("is-invalid");
+      // inputFile.classList.remove("is-valid");
 
     }
-
-
-
-
-    var botonEditar = document.querySelector("#botonEditar");
-    botonEditar.addEventListener('click',habilitarEdicion);
 
     var botonDescartar = document.querySelector("#botonDescartar");
     botonDescartar.addEventListener('click',descartarEdicion);
 
-
     //antes de hacer enviar el form lo freno y valido
-    formPerfil.addEventListener('submit',function(event){
+    formRegistro.addEventListener('submit',function(event){
 
       if (
         inputNombre.value.trim() === "" || inputNombre.value.length < 4 || inputNombre.value.length > 30 ||
@@ -89,11 +42,9 @@ window.onload = function(){
             if (element.value == "") {
               element.classList.add("is-invalid");
               var div = element.parentElement.querySelector('.invalid-feedback');
-              console.log(div);
               div.innerHTML = 'Campo obligatorio';
             }
         });
-        console.log(elementos);
         alert("Error en algun campo");
       }
     });
@@ -161,8 +112,6 @@ window.onload = function(){
     });
 
 
-
-
     //VALIDACION DEL EMAIL
     inputEmail.addEventListener('keyup',function(event){
       if (!regexEmail.test((this.value))) {
@@ -207,8 +156,5 @@ window.onload = function(){
       }
     });
 
-
-
-    /// FALTARIA HACER LAS VALIDACIONES DE JAVASCRIPT ANTES DE ENVIAR EL FORM
 
 }
