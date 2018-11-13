@@ -9,14 +9,31 @@
 <?php
   require 'Models/php-mailer-master/PHPMailerAutoload.php';
 
+  $usuarioEmail = "";
+  $nombre = "";
+  $textarea = "";
+  $nombreError = "";
+  $emailError = "";
+  $MensajeExitoso = "";
 
- $email = "";
+  if ($_POST) {
+    $nombre = $_POST['nombre'];
+    $usuarioEmail = $_POST['email'];
+    $textarea = $_POST['texto'];
 
-  $errores = [];
-
-	if ($_POST) {
-
-
+     if ( $nombre == "") {
+       $nombreError = "Por favor complete su nombre";
+       }
+     elseif (strlen($nombre) < 3) {
+       $nombreError = "El nombre es muy corto";
+       }  
+      elseif (empty($usuarioEmail)) {
+        $emailError = "Por favor complete su email";
+      }
+      elseif (!filter_var($usuarioEmail, FILTER_VALIDATE_EMAIL)) {
+        $emailError = "Por favor complete con un formato valido de email";
+      }
+      else {
       $mail = new PHPMailer;
 
       //$mail->SMTPDebug = 2;                               // Enable verbose debug output
@@ -43,9 +60,16 @@
           ]
       ]);
       $mail->Subject = 'Consulta de usuario';
-      $mail->Body    = $_POST['texto']. ' Enviado por '. $_POST['nombre'];
+      $mail->Body    = $textarea. ' Enviado por '. $usuarioEmail;
 
-  }
+         if(!$mail->send()) {
+           echo 'No se pudo enviar el mensaje';
+          echo 'Mailer Error: ' . $mail->ErrorInfo;
+          } else {
+          $MensajeExitoso = 'Mensaje enviado con exito. Prontor recibira su respuesta';
+          }
+      }
+    }  
 
   ?>
 <!-- SECCION DE CONTACTO -->
@@ -69,22 +93,17 @@
           <div class="form-group">
             <div class="form-group">
               <label>Nombre</label>
-              <input type="text" class="form-control" placeholder="" name="nombre">
+              <input type="text" class="form-control" placeholder="" name="nombre" value="<?php echo $nombre;?>">
+              <div class="text-danger"><?php echo $nombreError?></div>    
             </div>
             <label>Email</label>
-            <input type="email" class="form-control" placeholder="" name="email">
+            <input type="email" class="form-control" placeholder="" name="email" value="<?php echo $usuarioEmail;?>">
+            <div class="text-danger"><?php echo $emailError?></div>  
           </div>
-          <textarea class="form-control" placeholder="Dejanos tu mensaje..." rows="8" name="texto"></textarea>
+          <textarea class="form-control" placeholder="Dejanos tu mensaje..." rows="8" name="texto"><?php echo $textarea;?></textarea>
           <br>
-          <?php if (isset($_POST['email']) && !isset($errores["email"])) {
-                  if(!$mail->send()) {
-                    echo 'No se pudo enviar el mensaje';
-                    echo 'Mailer Error: ' . $mail->ErrorInfo;
-                  } else {
-                    echo 'Mensaje enviado con exito. Prontor recibira su respuesta';
-                  }
-                }?>
           <button type="submit" class="btn btn-success float-right">Contactar</button>
+           <div class="text-success"><?php echo $MensajeExitoso?></div>  
         </form>
       </div>
       <!-- FIN DE SECCION DEL PRODUCTO -->
