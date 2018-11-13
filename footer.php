@@ -14,7 +14,7 @@
           <!-- Content -->
           <h6 class="text-uppercase font-weight-bold">NUESTRO NOMBRE</h6>
           <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-          <p>Mega sarasa sarasasarasa sarasa sarasa sarasasarasa sarasasarasasarasasarasa sarasa.</p>
+          <p>Empresa dedicada a la comercialización de indumentaria,<br>a través de Internet, con la posibilidad de ir ampliando progresivamente.</p>
 
         </div>
         <!-- Grid column -->
@@ -31,8 +31,9 @@
           <p>
             <a class="dark-grey-text" href="preguntas.php">Preguntas Frecuentes</a>
           </p>
-
-
+          <p>
+            <a class="dark-grey-text" href="paginaInfo.php">Privacidad y terminos</a>
+          </p>
         </div>
         <!-- Grid column -->
 

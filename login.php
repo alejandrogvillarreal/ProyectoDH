@@ -59,8 +59,8 @@
               <img class="d-block img-fluid" src="images/carrousel-form-1.jpeg" alt="First slide">
               <div class="carousel-caption d-none d-md-block">
                 <div class="banner-text">
-                  <h2>Tenemos la mejor ropa</h2>
-                  <p>SARASA SARASASARASA SARASA SARASA SARASA SARASASARASASARASA SARASA SARASA SARASA</p>
+                  <h2>Empeza a sumar puntos</h2>
+                  <p>Obtene puntos y canjealos para un mayor descuento</p>
                 </div>
               </div>
             </div>
@@ -68,8 +68,8 @@
               <img class="d-block img-fluid" src="images/carrousel-form-2.jpeg" alt="Second slide">
               <div class="carousel-caption d-none d-md-block">
                 <div class="banner-text">
-                  <h2>Tenemos la mejor ropa</h2>
-                  <p>SARASA SARASASARASA SARASA SARASA SARASA SARASASARASASARASA SARASA SARASA SARASA</p>
+                  <h2>Te estamos esperando</h2>
+                  <p>Enterate de todas nuestras promociones y descuentos</p>
                 </div>
               </div>
             </div>
@@ -77,8 +77,8 @@
               <img class="d-block img-fluid" src="images/carrousel-form-3.jpeg" alt="Third slide">
               <div class="carousel-caption d-none d-md-block">
                 <div class="banner-text">
-                  <h2>Tenemos la mejor ropa</h2>
-                  <p>SARASA SARASASARASA SARASA SARASA SARASA SARASASARASASARASA SARASA SARASA SARASA</p>
+                  <h2>Calidad y variedad</h2>
+                  <p>Contamos con una extensa linea de indumentaria</p>
                 </div>
               </div>
             </div>

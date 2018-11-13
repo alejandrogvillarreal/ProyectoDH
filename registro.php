@@ -120,8 +120,8 @@
               <img class="d-block img-fluid" src="images/carrousel-form-1.jpeg" alt="First slide">
               <div class="carousel-caption d-none d-md-block">
                 <div class="banner-text">
-                  <h2>Tenemos la mejor ropa</h2>
-                  <p>SARASA SARASASARASA SARASA SARASA SARASA SARASASARASASARASA SARASA SARASA SARASA</p>
+                  <h2>Disfruta de nuestros beneficios</h2>
+                  <p>Descuentos de hasta 70%, HOT SALE y envios sin cargo</p>
                 </div>
               </div>
             </div>
@@ -129,8 +129,8 @@
               <img class="d-block img-fluid" src="images/carrousel-form-2.jpeg" alt="First slide">
               <div class="carousel-caption d-none d-md-block">
                 <div class="banner-text">
-                  <h2>Tenemos la mejor ropa</h2>
-                  <p>SARASA SARASASARASA SARASA SARASA SARASA SARASASARASASARASA SARASA SARASA SARASA</p>
+                  <h2>HOT SALE</h2>
+                  <p>Descuentos semanales en prendas seleccionadas</p>
                 </div>
               </div>
             </div>
@@ -138,8 +138,8 @@
               <img class="d-block img-fluid" src="images/carrousel-form-3.jpeg" alt="First slide">
               <div class="carousel-caption d-none d-md-block">
                 <div class="banner-text">
-                  <h2>Tenemos la mejor ropa</h2>
-                  <p>SARASA SARASASARASA SARASA SARASA SARASA SARASASARASASARASA SARASA SARASA SARASA</p>
+                  <h2>Expande nuestra comunidad</h2>
+                  <p>Mas de 1.000.000 de usuarios</p>
                 </div>
               </div>
             </div>
