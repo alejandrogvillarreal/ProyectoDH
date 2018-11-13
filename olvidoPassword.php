@@ -1,13 +1,12 @@
 <?php
     require 'head.php';
-?>
-<body>
-<?php
-  require 'header.php';
-?>
 
-  <?php
-  require 'Models/php-mailer-master/PHPMailerAutoload.php';
+    if ($auth->estaLogueado()) {
+      header("Location:index.php");
+      exit;
+    }
+
+    require 'Models/php-mailer-master/PHPMailerAutoload.php';
 
 //////////////////////////////////7
   //VARIABLES
@@ -59,13 +58,15 @@
       $mail->Body    = 'Tu nueva contrase'. utf8_decode("ñ") .'a es:  ' . $nuevaPassword . '  . Copi' . utf8_decode("á") . ' y peg' . utf8_decode("á") . ' el codigo para ingresar tu cuenta y cambia la contrase'. utf8_decode("ñ") .'a' ;
 
     }
+
+
 	}
 
-
   /////////////////////////////
-
-
-
+  ?>
+  <body>
+  <?php
+    require 'header.php';
   ?>
   <!-- ACA VA OLVIDO DE PASSWORD -->
 
@@ -77,7 +78,7 @@
           <hr>
         </div>
         <!-- ACA EMPIEZA LA COLUMNA IZQUIERA DE LA PANTALLA (FORM)-->
-        <div class="col-md-4 login-sec">
+        <div class="col-lg-4 login-sec">
 
           <form class="login-form" action="" method="post" enctype="multipart/form-data">
             <div class="form-group">
@@ -108,7 +109,7 @@
           </form>
 
           <!-- PARA IMPRIMIR LOS ERRORES -->
-          <ul class="errores">
+          <ul class="errores mt-5 ml-0 text-center">
       		<?php foreach ($errores as $error) : ?>
       			<li>
       				<?=$error?>

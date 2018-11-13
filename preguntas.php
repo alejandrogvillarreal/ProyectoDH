@@ -100,7 +100,7 @@
               <div id="preguntas4" class="collapse" aria-expanded="false">
                 <div class="card-block">
                   <p>
-                    <a href="index.php">Hacé click Acá</a> para acceder a "Olvidé mi contraseña". Ingresá tu mail registrado para que te enviemos una nueva contraseña de acceso.
+                    <a href="olvidoPassword.php">Hacé click Acá</a> para acceder a "Olvidé mi contraseña". Ingresá tu mail registrado para que te enviemos una nueva contraseña de acceso.
                     Para tu seguridad, en lugar de enviarte tu contraseña anterior crearemos una nueva.
                   </p>
                 </div>
