@@ -15,6 +15,7 @@
   $nombreError = "";
   $emailError = "";
   $MensajeExitoso = "";
+  $MensajeErroneo = "";
 
   if ($_POST) {
     $nombre = $_POST['nombre'];
@@ -63,7 +64,7 @@
       $mail->Body    = $textarea. ' Enviado por '. $usuarioEmail;
 
          if(!$mail->send()) {
-           echo 'No se pudo enviar el mensaje';
+           $MensajeErroneo = 'No se pudo enviar el mensaje';
           echo 'Mailer Error: ' . $mail->ErrorInfo;
           } else {
           $MensajeExitoso = 'Mensaje enviado con exito. Prontor recibira su respuesta';
@@ -104,6 +105,7 @@
           <br>
           <button type="submit" class="btn btn-success float-right">Contactar</button>
            <div class="text-success"><?php echo $MensajeExitoso?></div>  
+           <div class="text-danger"><?php echo $MensajeErroneo?></div>  
         </form>
       </div>
       <!-- FIN DE SECCION DEL PRODUCTO -->
