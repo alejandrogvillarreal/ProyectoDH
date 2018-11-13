@@ -146,7 +146,7 @@
             <div class="col-12 col-sm-6 col-md-4 col-lg-3">
               <h5 class="text-dark text-center">Camisas</h5>
               <a href="categorias.php">
-                <img class="mx-auto d-block" src="https://dafitistaticar-a.akamaihd.net/cms/1018-onsite-promociones-camisas-2x1099.jpg" alt="Camisas" />
+                <img class="mx-auto d-block" src="https://dafitistaticar-a.akamaihd.net/cms/0827-masc-indumentaria-camisas.jpg" alt="Camisas" />
               </a>
               <br>
             </div>
