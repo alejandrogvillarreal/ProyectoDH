@@ -2,7 +2,9 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-        <a class="navbar-brand" href="index.php" ><img src="images/logo.png" class="rounded float-left" alt="logo" width="185" height="35"></a>
+        <a class="navbar-brand" href="index.php">
+          <img src="images/logo.png" class="rounded float-left" alt="logo" width="185" height="35">
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -47,12 +49,12 @@
             <?php if ($auth->estaLogueado()): ?>
 
               <li class="nav-item dropdown my-auto">
-                <ul class="list-inline">
+                <ul class="list-inline d-flex">
                   <li class="list-inline-item"><img src="images/avatars/<?php echo $usuarioLogueado->getImagen();;?>" alt="" class="d-inline imagen-redonda rounded-circle"></li>
                   <li class="list-inline-item">
                     <a class="nav-link dropdown-toggle" href="perfil.php" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Mi cuenta
-                    </a>
+                  </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                       <a class="dropdown-item" href="perfil.php">Perfil de <?=$usuarioLogueado->getUsername()?></a>
                       <div class="dropdown-divider"></div>

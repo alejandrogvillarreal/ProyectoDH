@@ -31,13 +31,13 @@
         <!-- ESTE ES EL MENU LATERAL IZQUIERDO -->
           <div class="col-12 col-sm-4 col-md-3">
               <div class="card bg-light mb-3">
-                  <div class="card-header bg-primary text-white text-uppercase">Categorias</div>
+                  <div class="card-header bg-dark text-white text-uppercase">Categorias</div>
                   <ul class="list-group category_block">
-                      <li class="list-group-item"><a href="categorias.php">Categoria 1</a></li>
-                      <li class="list-group-item"><a href="categorias.php">Categoria 2</a></li>
-                      <li class="list-group-item"><a href="categorias.php">Categoria 3</a></li>
-                      <li class="list-group-item"><a href="categorias.php">Categoria 4</a></li>
-                      <li class="list-group-item"><a href="categorias.php">Categoria 5</a></li>
+                      <li class="list-group-item"><a href="categorias.php" class="text-secondary">Categoria 1</a></li>
+                      <li class="list-group-item"><a href="categorias.php" class="text-secondary">Categoria 2</a></li>
+                      <li class="list-group-item"><a href="categorias.php" class="text-secondary">Categoria 3</a></li>
+                      <li class="list-group-item"><a href="categorias.php" class="text-secondary">Categoria 4</a></li>
+                      <li class="list-group-item"><a href="categorias.php" class="text-secondary">Categoria 5</a></li>
                   </ul>
               </div>
               <!--<div class="card bg-light mb-3">
@@ -45,7 +45,7 @@
                   <div class="card-body">
                       <img class="img-fluid" src="https://dummyimage.com/600x400/55595c/fff" />
                       <h5 class="card-title">Nombre del producto</h5>
-                      <p class="card-text">Breve descripción.</p>
+                      <p class="card-text text-secondary">Breve descripción.</p>
                       <p class="bloc_left_price">$600</p>
                   </div>
               </div>-->
@@ -62,11 +62,11 @@
                             <img class="card-img-top" src="images/ropa/Hombre/Buzos/buzo-1.jpg" alt="Card image cap">
                           </a>
                           <div class="card-body">
-                              <h4 class="card-title"><a href="producto.php" title="View Product">Nombre del producto</a></h4>
-                              <p class="card-text">Breve descripción.</p>
+                              <h4 class="card-title"><a href="producto.php" class="card-link text-dark" title="View Product">Nombre del producto</a></h4>
+                              <p class="card-text text-secondary">Breve descripción.</p>
                               <div class="row">
                                   <div class="col">
-                                      <p class="btn btn-danger btn-block">$600</p>
+                                      <p class="btn btn-dark btn-block">$600</p>
                                   </div>
                                   <div class="col">
                                       <a href="#" class="btn btn-success btn-block">Comprar</a>
@@ -81,11 +81,11 @@
                             <img class="card-img-top" src="images/ropa/Hombre/Buzos/buzo-2.jpg" alt="Card image cap">
                           </a>
                           <div class="card-body">
-                              <h4 class="card-title"><a href="producto.php" title="View Product">Nombre del producto</a></h4>
-                              <p class="card-text">Breve descripción.</p>
+                              <h4 class="card-title"><a href="producto.php" class="card-link text-dark" title="View Product">Nombre del producto</a></h4>
+                              <p class="card-text text-secondary">Breve descripción.</p>
                               <div class="row">
                                   <div class="col">
-                                      <p class="btn btn-danger btn-block">$600</p>
+                                      <p class="btn btn-dark btn-block">$600</p>
                                   </div>
                                   <div class="col">
                                       <a href="#" class="btn btn-success btn-block">Comprar</a>
@@ -100,11 +100,11 @@
                             <img class="card-img-top" src="images/ropa/Hombre/Buzos/buzo-3.jpg" alt="Card image cap">
                           </a>
                           <div class="card-body">
-                              <h4 class="card-title"><a href="producto.php" title="View Product">Nombre del producto</a></h4>
-                              <p class="card-text">Breve descripción.</p>
+                              <h4 class="card-title"><a href="producto.php" class="card-link text-dark" title="View Product">Nombre del producto</a></h4>
+                              <p class="card-text text-secondary">Breve descripción.</p>
                               <div class="row">
                                   <div class="col">
-                                      <p class="btn btn-danger btn-block">$600</p>
+                                      <p class="btn btn-dark btn-block">$600</p>
                                   </div>
                                   <div class="col">
                                       <a href="#" class="btn btn-success btn-block">Comprar</a>
@@ -119,11 +119,11 @@
                             <img class="card-img-top" src="images/ropa/Hombre/Buzos/buzo-4.jpg" alt="Card image cap">
                           </a>
                           <div class="card-body">
-                              <h4 class="card-title"><a href="producto.php" title="View Product">Nombre del producto</a></h4>
-                              <p class="card-text">Breve descripción.</p>
+                              <h4 class="card-title"><a href="producto.php" class="card-link text-dark" title="View Product">Nombre del producto</a></h4>
+                              <p class="card-text text-secondary">Breve descripción.</p>
                               <div class="row">
                                   <div class="col">
-                                      <p class="btn btn-danger btn-block">$600</p>
+                                      <p class="btn btn-dark btn-block">$600</p>
                                   </div>
                                   <div class="col">
                                       <a href="#" class="btn btn-success btn-block">Comprar</a>
@@ -138,11 +138,11 @@
                             <img class="card-img-top" src="images/ropa/Hombre/Buzos/buzo-5.jpg" alt="Card image cap">
                           </a>
                           <div class="card-body">
-                              <h4 class="card-title"><a href="producto.php" title="View Product">Nombre del producto</a></h4>
-                              <p class="card-text">Breve descripción.</p>
+                              <h4 class="card-title"><a href="producto.php" class="card-link text-dark" title="View Product">Nombre del producto</a></h4>
+                              <p class="card-text text-secondary">Breve descripción.</p>
                               <div class="row">
                                   <div class="col">
-                                      <p class="btn btn-danger btn-block">$600</p>
+                                      <p class="btn btn-dark btn-block">$600</p>
                                   </div>
                                   <div class="col">
                                       <a href="#" class="btn btn-success btn-block">Comprar</a>
@@ -157,11 +157,11 @@
                             <img class="card-img-top" src="images/ropa/Hombre/Buzos/buzo-6.jpg" alt="Card image cap">
                           </a>
                           <div class="card-body">
-                              <h4 class="card-title"><a href="producto.php" title="View Product">Nombre del producto</a></h4>
-                              <p class="card-text">Breve descripción.</p>
+                              <h4 class="card-title"><a href="producto.php" class="card-link text-dark" title="View Product">Nombre del producto</a></h4>
+                              <p class="card-text text-secondary">Breve descripción.</p>
                               <div class="row">
                                   <div class="col">
-                                      <p class="btn btn-danger btn-block">$600</p>
+                                      <p class="btn btn-dark btn-block">$600</p>
                                   </div>
                                   <div class="col">
                                       <a href="#" class="btn btn-success btn-block">Comprar</a>

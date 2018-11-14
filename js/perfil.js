@@ -1,5 +1,6 @@
 window.onload = function(){
 
+
     var regexEmail = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 
     var formPerfil = document.querySelector(".perfil-form");

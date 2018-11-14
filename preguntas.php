@@ -22,14 +22,14 @@
               <div class="card-header">
                 <div>
                   <a data-toggle="collapse" href="#preguntas1" aria-expanded="false" class="collapsed">
-                    <h3>Cómo comprar en Nuestro Nombre?</h3>
+                    <h3>Cómo comprar en Columbus?</h3>
                   </a>
                 </div>
               </div>
               <div id="preguntas1" class="collapse" aria-expanded="false">
                 <div class="card-block">
                   <p>
-                    Comprar en NuestroNombre es muy fácil y seguro.
+                    Comprar en Columbus es muy fácil y seguro.
                   </p>
                   <p>
                     A continuación te brindamos algunos datos importantes que pueden ayudarte al momento de realizar tu compra.
@@ -56,14 +56,14 @@
               <div class="card-header">
                 <div>
                   <a data-toggle="collapse" href="#preguntas2" aria-expanded="false" class="collapsed">
-                    <h3>Cómo creo una cuenta en NuestroNombre?</h3>
+                    <h3>Cómo creo una cuenta en Columbus?</h3>
                   </a>
                 </div>
               </div>
               <div id="preguntas2" class="collapse" aria-expanded="false">
                 <div class="card-block">
                   <p>
-                    Para registrarte en NuestroNombre hacé click <a href="registro.php">Acá</a>
+                    Para registrarte en Columbus hacé click <a href="registro.php">Acá</a>
                   </p>
                 </div>
               </div>
@@ -80,7 +80,7 @@
               <div id="preguntas3" class="collapse" aria-expanded="false">
                 <div class="card-block">
                   <p>
-                    Te informamos que cada producto publicado en NuestroNombre cuenta con una ficha de detalles, donde se informa material, medidas, color, etc. Podés acceder a esta información al pie del producto elegido.
+                    Te informamos que cada producto publicado en Columbus cuenta con una ficha de detalles, donde se informa material, medidas, color, etc. Podés acceder a esta información al pie del producto elegido.
                   </p>
                 </div>
               </div>

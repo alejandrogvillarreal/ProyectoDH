@@ -235,5 +235,6 @@
       <!-- ESTE ES EL SCRIPT PARA LAS VALIDACIONES DEL PERFIL -->
       <script src="js/perfil.js"></script>
 
+
 </body>
 </html>
