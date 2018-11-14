@@ -14,18 +14,19 @@
   $textarea = "";
   $nombreError = "";
   $emailError = "";
+  $textareaError = "";
   $MensajeExitoso = "";
   $MensajeErroneo = "";
 
   if ($_POST) {
-    $nombre = $_POST['nombre'];
-    $usuarioEmail = $_POST['email'];
-    $textarea = $_POST['texto'];
+    $nombre = trim($_POST['nombre']);
+    $usuarioEmail = trim($_POST['email']);
+    $textarea = trim($_POST['texto']);
 
      if ( $nombre == "") {
        $nombreError = "Por favor complete su nombre";
        }
-     elseif (strlen($nombre) < 3) {
+      elseif (strlen($nombre) < 3) {
        $nombreError = "El nombre es muy corto";
        }  
       elseif (empty($usuarioEmail)) {
@@ -33,6 +34,12 @@
       }
       elseif (!filter_var($usuarioEmail, FILTER_VALIDATE_EMAIL)) {
         $emailError = "Por favor complete con un formato valido de email";
+      }
+      elseif (empty($textarea)) {
+        $textareaError = "El mensaje no puede estar vacio";
+      }
+      elseif (strlen($textarea) < 10) {
+        $textareaError = "El mensaje es muy corto";
       }
       else {
       $mail = new PHPMailer;
@@ -68,6 +75,7 @@
           echo 'Mailer Error: ' . $mail->ErrorInfo;
           } else {
           $MensajeExitoso = 'Mensaje enviado con exito. Prontor recibira su respuesta';
+          header( "refresh:3;url=http://localhost/proyectodh/index.php" );
           }
       }
     }  
@@ -94,18 +102,25 @@
           <div class="form-group">
             <div class="form-group">
               <label>Nombre</label>
-              <input type="text" class="form-control" placeholder="" name="nombre" value="<?php echo $nombre;?>">
-              <div class="text-danger"><?php echo $nombreError?></div>    
+              <input type="text" class="form-control" placeholder="" name="nombre" value="<?php echo $nombre;?>" id="name">
+              <div class="invalid-feedback">
+              </div>    
             </div>
-            <label>Email</label>
-            <input type="email" class="form-control" placeholder="" name="email" value="<?php echo $usuarioEmail;?>">
-            <div class="text-danger"><?php echo $emailError?></div>  
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" class="form-control" placeholder="" name="email" value="<?php echo $usuarioEmail;?>">
+              <div class="invalid-feedback">
+              </div> 
+            </div>     
           </div>
           <textarea class="form-control" placeholder="Dejanos tu mensaje..." rows="8" name="texto"><?php echo $textarea;?></textarea>
           <br>
           <button type="submit" class="btn btn-success float-right">Contactar</button>
-           <div class="text-success"><?php echo $MensajeExitoso?></div>  
-           <div class="text-danger"><?php echo $MensajeErroneo?></div>  
+            <div class="text-success"><?php echo $MensajeExitoso?></div>  
+            <div class="text-danger"><?php echo $MensajeErroneo?></div>  
+            <div class="text-danger"><?php echo $nombreError?></div>
+            <div class="text-danger"><?php echo $emailError?></div>  
+            <div class="text-danger"><?php echo $textareaError?></div>  
         </form>
       </div>
       <!-- FIN DE SECCION DEL PRODUCTO -->
@@ -116,6 +131,7 @@
 
 
       <?php include 'footer.php'; ?>
-
+    <script src="js/contacto.js"></script>
+            
 </body>
 </html>
