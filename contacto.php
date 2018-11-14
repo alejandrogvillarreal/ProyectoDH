@@ -9,39 +9,33 @@
 <?php
   require 'Models/php-mailer-master/PHPMailerAutoload.php';
 
-  $usuarioEmail = "";
+  $email = "";
   $nombre = "";
-  $textarea = "";
-  $nombreError = "";
-  $emailError = "";
-  $textareaError = "";
+  $texto = "";
+  // $nombreError = "";
+  // $emailError = "";
+  // $textoError = "";
+  // $MensajeErroneo = "";
   $MensajeExitoso = "";
-  $MensajeErroneo = "";
+
+  $errores = [];
 
   if ($_POST) {
-    $nombre = trim($_POST['nombre']);
-    $usuarioEmail = trim($_POST['email']);
-    $textarea = trim($_POST['texto']);
+    $errores = $validator->validarContacto($_POST, $db);
 
-     if ( $nombre == "") {
-       $nombreError = "Por favor complete su nombre";
-       }
-      elseif (strlen($nombre) < 3) {
-       $nombreError = "El nombre es muy corto";
-       }  
-      elseif (empty($usuarioEmail)) {
-        $emailError = "Por favor complete su email";
-      }
-      elseif (!filter_var($usuarioEmail, FILTER_VALIDATE_EMAIL)) {
-        $emailError = "Por favor complete con un formato valido de email";
-      }
-      elseif (empty($textarea)) {
-        $textareaError = "El mensaje no puede estar vacio";
-      }
-      elseif (strlen($textarea) < 10) {
-        $textareaError = "El mensaje es muy corto";
-      }
-      else {
+    if (!isset($errores["nombre"])) {
+      $nombre = $_POST["nombre"];
+    }
+
+    if (!isset($errores["email"])) {
+      $email = $_POST["email"];
+    }
+    if (!isset($errores["texto"])) {
+      $texto = $_POST["texto"];
+    }
+
+
+    if (count($errores) == 0) {
       $mail = new PHPMailer;
 
       //$mail->SMTPDebug = 2;                               // Enable verbose debug output
@@ -54,7 +48,7 @@
       $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
       $mail->Port = 587;                                    // TCP Puerto
 
-      $mail->setFrom($usuarioEmail);                        // El mail ficticio envia el mensaje
+      $mail->setFrom($email);                        // El mail ficticio envia el mensaje
       $mail->addAddress('proyectodh1111@gmail.com');        // Quien lo recibe, deberia ir el email que llegue por post
 
       // $mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
@@ -68,17 +62,18 @@
           ]
       ]);
       $mail->Subject = 'Consulta de usuario';
-      $mail->Body    = $textarea . ' Enviado por ' . $usuarioEmail . " " .$nombre;
+      $mail->Body    = $texto . ' Enviado por ' . $email . " " .$nombre;
 
          if(!$mail->send()) {
            $MensajeErroneo = 'No se pudo enviar el mensaje';
           echo 'Mailer Error: ' . $mail->ErrorInfo;
           } else {
           $MensajeExitoso = 'Mensaje enviado con exito. Prontor recibira su respuesta';
-          header( "refresh:3;url=http://localhost/proyectodh/index.php" );
           }
-      }
-    }  
+    }
+  }
+
+
 
   ?>
 <!-- SECCION DE CONTACTO -->
@@ -104,23 +99,31 @@
               <label>Nombre</label>
               <input type="text" class="form-control" placeholder="" name="nombre" value="<?php echo $nombre;?>" id="name">
               <div class="invalid-feedback">
-              </div>    
+              </div>
             </div>
             <div class="form-group">
               <label>Email</label>
-              <input type="email" class="form-control" placeholder="" name="email" value="<?php echo $usuarioEmail;?>">
+              <input type="email" class="form-control" placeholder="" name="email" value="<?php echo $email;?>">
               <div class="invalid-feedback">
-              </div> 
-            </div>     
+              </div>
+            </div>
           </div>
-          <textarea class="form-control" placeholder="Dejanos tu mensaje..." rows="8" name="texto"><?php echo $textarea;?></textarea>
+          <textarea class="form-control" placeholder="Dejanos tu mensaje..." rows="8" name="texto"><?php echo $texto;?></textarea>
           <br>
           <button type="submit" class="btn btn-success float-right">Contactar</button>
-            <div class="text-success"><?php echo $MensajeExitoso?></div>  
-            <div class="text-danger"><?php echo $MensajeErroneo?></div>  
-            <div class="text-danger"><?php echo $nombreError?></div>
-            <div class="text-danger"><?php echo $emailError?></div>  
-            <div class="text-danger"><?php echo $textareaError?></div>  
+          <ul class="errores">
+
+          </ul>
+            <div class="text-success"><?php echo $MensajeExitoso?></div>
+            <div class="text-danger font-weight-bold">
+              <ul>
+                <?php foreach ($errores as $error) : ?>
+                  <li>
+                    <?=$error?>
+                  </li>
+                <?php endforeach; ?>
+              </ul>
+            </div>
         </form>
       </div>
       <!-- FIN DE SECCION DEL PRODUCTO -->
@@ -132,6 +135,6 @@
 
       <?php include 'footer.php'; ?>
     <script src="js/contacto.js"></script>
-            
+
 </body>
 </html>

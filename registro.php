@@ -242,13 +242,15 @@
         <div class="etc-login-form">
           <div class="text-center"><p>Ya tenes cuenta? <a href="login.php">Ingresá acá</a></p></div>
         </div>
-        <ul class="errores">
-        <?php foreach ($errores as $error) : ?>
-          <li>
-            <?=$error?>
-          </li>
-        <?php endforeach; ?>
-        </ul>
+        <div class="text-danger font-weight-bold">
+          <ul>
+            <?php foreach ($errores as $error) : ?>
+              <li>
+                <?=$error?>
+              </li>
+            <?php endforeach; ?>
+          </ul>
+        </div>
       </div>
         <!-- ACA TERMINA LA COLUMNA DERECHA DE LA PANTALLA (FORM)-->
     </div>

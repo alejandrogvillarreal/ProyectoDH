@@ -90,7 +90,7 @@
       <div class="col-md-4 login-sec">
 
 
-        <form class="login-form" action="" method="post" enctype="multipart/form-data">
+        <form class="login-form clearfix" action="" method="post" enctype="multipart/form-data">
           <div class="form-group">
             <label>Email</label>
             <input type="email" class="form-control" placeholder="" name="email" value="<?php echo $email; ?>">
@@ -112,22 +112,22 @@
           <button type="submit" class="btn btn-success float-right">Ingresar</button>
         </form>
 
-
-        <br><br><br>
-        <div class="etc-login-form">
+        <div class="text-danger font-weight-bold">
+          <ul>
+            <?php foreach ($errores as $error) : ?>
+              <li>
+                <?=$error?>
+              </li>
+            <?php endforeach; ?>
+          </ul>
+        </div>
+        <div class="etc-login-form clearfix mt-2">
           <div class="text-center">Olvidaste tu contraseña? <a href="olvidoPassword.php">Click Acá</a></div>
           <div class="text-center">Aún no tenes cuenta? <a href="registro.php">Registrate acá</a></div>
         </div>
 
         <!-- PARA IMPRIMIR LOS ERRORES -->
-        <ul class="errores">
-    		<?php foreach ($errores as $error) : ?>
-    			<li>
-    				<?=$error?>
-    			</li>
 
-    		<?php endforeach; ?>
-    		</ul>
 
 
       </div>

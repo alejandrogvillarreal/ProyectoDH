@@ -207,6 +207,47 @@
 
     ///////////////////////////////////////////////////////////////////////////////////////
 
+
+    function validarContacto($post, DataBase $db) {
+
+    $errores = [];
+
+    foreach ($post as $clave => $valor) {
+      $post[$clave] = trim($valor);
+    }
+
+
+    if ($post["email"] == "") {
+      $errores["email"] = "Por favor ingrese su email";
+    }
+    else if (filter_var($post["email"], FILTER_VALIDATE_EMAIL) == false) {
+      $errores["email"] = "Formato de email inválido";
+    }
+
+    //nombre vacio
+    if(!isset($post["nombre"]) ){
+        $errores["nombre"] = "El nombre es obligatorio";
+    //cantidad de caracteres del nombre
+    }else if( strlen($post["nombre"]) < 4 || strlen($post["nombre"]) > 30){
+        $errores["nombre"] = "El nombre debe ser de al menos 3 caracteres y menor a 30 caracteres.";
+    }else if(!ctype_alpha($post["nombre"])){
+        $errores["nombre"] = "El nombre sólo puede contener letras";
+    }
+
+    //ERROR DEL TEXTAREA
+    if(empty($post["texto"])) {
+      $errores["texto"] = "El mensaje no puede estar vacio";
+    }
+    elseif (strlen($post["texto"]) < 10) {
+      $errores["texto"] = "El mensaje es muy corto";
+    }
+
+
+    return $errores;
+  }
+
+    ///////////////////////////////////////////////////////////////////////////////////////
+
     function validarEmail($post, DataBase $db) {
 
       $errores = [];

@@ -63,8 +63,9 @@
                   </li>
                 </ul>
               </li>
-              <li class="nav-item my-auto">
-                <a class="btn btn-success btn-sm" href="carrito.php">
+              <li class="nav-item my-auto" style="margin-right: -60px;">
+                <!-- <a class="btn btn-success btn-sm" href="carrito.php"> -->
+                <a class="btn btn-sm" href="carrito.php"  style="background-color:#ABB2B9;">
                     <!--<i class="fa fa-shopping-cart"></i>--> <!-- Carrito --><img src="images/carrito.png">
                     <span class="badge badge-light">3</span>
                 </a>

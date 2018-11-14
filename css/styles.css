@@ -4,6 +4,7 @@
 }
 body{
   background: linear-gradient(to bottom, #FFFFFF,#BFBCBC);
+  font-family: 'Roboto', sans-serif;
 }
 
 /*faq*/
@@ -29,7 +30,7 @@ body{
     margin:0 0 0px;
     font-size:20px;
     font-weight:bold;
-    color:#8E44AD;
+    color:#2083C2;
 }
 .card-block {
     -moz-box-flex: 1;
@@ -46,13 +47,6 @@ body{
     height: 40px;
 }
 
-.errores {
-	  color: #C70039;
-    font-weight: bold;
-    list-style: none;
-    padding-top: 15px;
-    padding-bottom: 15px;
-}
 
 /*faq*/
 /*

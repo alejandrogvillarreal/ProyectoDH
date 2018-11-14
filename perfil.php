@@ -107,13 +107,15 @@
           <!-- <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar img-circle img-thumbnail" alt="avatar"> -->
           <img src="images/avatars/<?php echo $imagen;?>" class="avatar img-circle img-thumbnail" alt="avatar">
 
-          <ul class="errores">
-          <?php foreach ($errores as $error) : ?>
-            <li>
-              <?=$error?>
-            </li>
-          <?php endforeach; ?>
-          </ul>
+          <div class="text-danger font-weight-bold">
+            <ul>
+              <?php foreach ($errores as $error) : ?>
+                <li>
+                  <?=$error?>
+                </li>
+              <?php endforeach; ?>
+            </ul>
+          </div>
         </div>
       </div><!--/col-3-->
       <!-- ACA TERMINA LA SECCION DE LA IZQUIERDA DE LA PANTALLA (FOTO) -->
