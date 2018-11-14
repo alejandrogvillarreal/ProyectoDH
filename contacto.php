@@ -54,7 +54,7 @@
       $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
       $mail->Port = 587;                                    // TCP Puerto
 
-      $mail->setFrom($_POST['email']); // El mail ficticio envia el mensaje
+      $mail->setFrom($usuarioEmail);                        // El mail ficticio envia el mensaje
       $mail->addAddress('proyectodh1111@gmail.com');        // Quien lo recibe, deberia ir el email que llegue por post
 
       // $mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
@@ -68,7 +68,7 @@
           ]
       ]);
       $mail->Subject = 'Consulta de usuario';
-      $mail->Body    = $textarea. ' Enviado por '. $usuarioEmail;
+      $mail->Body    = $textarea . ' Enviado por ' . $usuarioEmail . " " .$nombre;
 
          if(!$mail->send()) {
            $MensajeErroneo = 'No se pudo enviar el mensaje';
