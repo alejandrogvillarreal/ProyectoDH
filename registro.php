@@ -150,7 +150,7 @@
 
       <!-- ACA EMPIEZA LA COLUMNA DERECHA DE LA PANTALLA (FORM)-->
       <div class="col-md-4 login-sec">
-        <form class="login-form registro-form" action="" method="post" enctype="multipart/form-data">
+        <form class="login-form registro-form clearfix" action="" method="post" enctype="multipart/form-data">
         <div class="form-group">
           <div class="form-row">
             <div class="col">

@@ -68,7 +68,7 @@
            $MensajeErroneo = 'No se pudo enviar el mensaje';
           echo 'Mailer Error: ' . $mail->ErrorInfo;
           } else {
-          $MensajeExitoso = 'Mensaje enviado con exito. Prontor recibira su respuesta';
+          $MensajeExitoso = 'Mensaje enviado con exito. Pronto recibirá su respuesta';
           }
     }
   }
@@ -93,7 +93,7 @@
       <div class="col-12 col-lg-6 add_to_cart_block">
         <h1 class="text-center">Contactanos</h1>
         <hr>
-        <form class="login-form" action="" method="post" enctype="multipart/form-data">
+        <form class="login-form clearfix" action="" method="post" enctype="multipart/form-data">
           <div class="form-group">
             <div class="form-group">
               <label>Nombre</label>
@@ -111,20 +111,19 @@
           <textarea class="form-control" placeholder="Dejanos tu mensaje..." rows="8" name="texto"><?php echo $texto;?></textarea>
           <br>
           <button type="submit" class="btn btn-success float-right">Contactar</button>
-          <ul class="errores">
-
-          </ul>
-            <div class="text-success"><?php echo $MensajeExitoso?></div>
-            <div class="text-danger font-weight-bold">
-              <ul>
-                <?php foreach ($errores as $error) : ?>
-                  <li>
-                    <?=$error?>
-                  </li>
-                <?php endforeach; ?>
-              </ul>
-            </div>
         </form>
+        <div class="text-success">
+          <?php echo $MensajeExitoso?>
+        </div>
+        <div class="text-danger font-weight-bold">
+          <ul>
+            <?php foreach ($errores as $error) : ?>
+              <li>
+                <?=$error?>
+              </li>
+            <?php endforeach; ?>
+          </ul>
+        </div>
       </div>
       <!-- FIN DE SECCION DEL PRODUCTO -->
   </div>

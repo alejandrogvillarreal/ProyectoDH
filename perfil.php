@@ -125,7 +125,7 @@
         <button class="btn btn-info float-right" type="submit" id="botonEditar">Editar Perfil</button>
         <br>
         <br>
-        <form class="form perfil-form" action="" method="post" id="registrationForm" enctype="multipart/form-data">
+        <form class="form perfil-form clearfix" action="" method="post" id="registrationForm" enctype="multipart/form-data">
           <!-- <h6>Subí tu foto...</h6>
           <div class="custom-file form-group">
             <label>Avatar</label>
@@ -217,9 +217,6 @@
               <!-- <button class="btn" type="reset">Resetear</button> -->
             </div>
           </div>
-
-
-
         </form>
 
 
