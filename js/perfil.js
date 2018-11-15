@@ -21,6 +21,10 @@ window.onload = function(){
       inputPass.classList.add('is-invalid');
       inputPass.setAttribute("placeholder", "Ingresá tu contraseña para confirmar cambios");
 
+      //DESHABILITO EL MAIL PORQUE NO SE PUEDE CAMBIAR
+      inputEmail = document.querySelector('input[name="email"]');
+      inputEmail.setAttribute("disabled", "disabled");
+
       inputFile = document.querySelector(".input-file-ale");
       inputFile.removeAttribute("disabled");
 

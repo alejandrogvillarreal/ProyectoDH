@@ -172,12 +172,14 @@
 
 
 
-      if ($post["email"] == "") {
-        $errores["email"] = "Complete el campo email";
-      }
-      else if (filter_var($post["email"], FILTER_VALIDATE_EMAIL) == false) {
-        $errores["mail"] = "Formato de email inválido";
-      }
+      // NO VALIDO EMAIL PORQUE NO SE PUEDE CAMBIAR
+
+      // if ($post["email"] == "") {
+      //   $errores["email"] = "Complete el campo email";
+      // }
+      // else if (filter_var($post["email"], FILTER_VALIDATE_EMAIL) == false) {
+      //   $errores["mail"] = "Formato de email inválido";
+      // }
 
 
       if(empty($post["password"]) || strlen($post["password"]) < 5){

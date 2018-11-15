@@ -47,9 +47,10 @@
       if (!isset($errores["apellido"])) {
         $apellido = $_POST["apellido"];
       }
-      if (!isset($errores["email"])) {
-        $email = $_POST["email"];
-      }
+      //NO VALIDO PORQUE EL EMAIL NO PUEDE CAMBIAR
+      // if (!isset($errores["email"])) {
+      //   $email = $_POST["email"];
+      // }
       if (!isset($errores["username"])) {
         $username = $_POST["username"];
       }
@@ -72,7 +73,7 @@
 
         $usuarioLogueado->setNombre($_POST["nombre"]);
         $usuarioLogueado->setApellido($_POST["apellido"]);
-        $usuarioLogueado->setEmail($_POST["email"]);
+        //NO LE MANDO EL EMAIL PORQUE NO SE PUEDE CAMBIAR
         $usuarioLogueado->setUsername($_POST["username"]);
         $usuarioLogueado->setPais($_POST["pais"]);
         $usuarioLogueado->setPassword(password_hash($_POST["password"], PASSWORD_DEFAULT));
