@@ -57,7 +57,7 @@
           <div class="col">
               <div class="row">
                   <div class="col-12 col-md-6 col-lg-4 mb-5">
-                      <div class="card">
+                      <div class="card zoom">
                           <a href="producto.php">
                             <img class="card-img-top" src="images/ropa/Hombre/Buzos/buzo-1.jpg" alt="Card image cap">
                           </a>
@@ -76,7 +76,7 @@
                       </div>
                   </div>
                   <div class="col-12 col-md-6 col-lg-4 mb-5">
-                      <div class="card">
+                      <div class="card zoom">
                           <a href="producto.php">
                             <img class="card-img-top" src="images/ropa/Hombre/Buzos/buzo-2.jpg" alt="Card image cap">
                           </a>
@@ -95,7 +95,7 @@
                       </div>
                   </div>
                   <div class="col-12 col-md-6 col-lg-4 mb-5">
-                      <div class="card">
+                      <div class="card zoom">
                           <a href="producto.php">
                             <img class="card-img-top" src="images/ropa/Hombre/Buzos/buzo-3.jpg" alt="Card image cap">
                           </a>
@@ -114,7 +114,7 @@
                       </div>
                   </div>
                   <div class="col-12 col-md-6 col-lg-4 mb-5">
-                      <div class="card">
+                      <div class="card zoom">
                           <a href="producto.php">
                             <img class="card-img-top" src="images/ropa/Hombre/Buzos/buzo-4.jpg" alt="Card image cap">
                           </a>
@@ -133,7 +133,7 @@
                       </div>
                   </div>
                   <div class="col-12 col-md-6 col-lg-4 mb-5">
-                      <div class="card">
+                      <div class="card zoom">
                           <a href="producto.php">
                             <img class="card-img-top" src="images/ropa/Hombre/Buzos/buzo-5.jpg" alt="Card image cap">
                           </a>
@@ -152,7 +152,7 @@
                       </div>
                   </div>
                   <div class="col-12 col-md-6 col-lg-4 mb-5">
-                      <div class="card">
+                      <div class="card zoom">
                           <a href="producto.php">
                             <img class="card-img-top" src="images/ropa/Hombre/Buzos/buzo-6.jpg" alt="Card image cap">
                           </a>
