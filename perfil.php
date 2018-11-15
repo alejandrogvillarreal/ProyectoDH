@@ -105,7 +105,7 @@
       <div class="col-sm-3 mt-5"><!--left col-->
         <div class="text-center">
           <!-- <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar img-circle img-thumbnail" alt="avatar"> -->
-          <img src="images/avatars/<?php echo $imagen;?>" class="avatar img-circle img-thumbnail" alt="avatar">
+          <img src="images/avatars/<?php echo $imagen;?>" class="avatar img-circle img-thumbnail shadow-lg" alt="avatar">
 
           <div class="text-danger font-weight-bold">
             <ul>

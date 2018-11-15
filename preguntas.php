@@ -16,9 +16,9 @@
       <!-- ACA EMPIEZA EL CONTENEDOR CENTRAL DE LA PANTALLA (PREGUNTAS)-->
       <div class="col-md-8 offset-md-2">
         <div class="bd-example">
-          <div id="accordion" aria-multiselectable="true">
+          <div id="accordion" aria-multiselectable="true" class="shadow-lg">
             <!-- INICIO PREGUNTA -->
-            <div class="card">
+            <div class="card shadow">
               <div class="card-header">
                 <div>
                   <a data-toggle="collapse" href="#preguntas1" aria-expanded="false" class="collapsed">
@@ -52,7 +52,7 @@
             <!-- FIN PREGUNTA -->
 
             <!-- INICIO PREGUNTA -->
-            <div class="card">
+            <div class="card shadow">
               <div class="card-header">
                 <div>
                   <a data-toggle="collapse" href="#preguntas2" aria-expanded="false" class="collapsed">
@@ -69,7 +69,7 @@
               </div>
             </div>
 
-            <div class="card">
+            <div class="card shadow">
               <div class="card-header">
                 <div>
                   <a data-toggle="collapse" href="#preguntas3" aria-expanded="false" class="collapsed">
@@ -89,7 +89,7 @@
 
 
             <!-- INICIO PREGUNTA -->
-            <div class="card">
+            <div class="card shadow">
               <div class="card-header">
                 <div>
                   <a data-toggle="collapse" href="#preguntas4" aria-expanded="false" class="collapsed">
