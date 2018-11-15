@@ -42,7 +42,7 @@
               </div>
               <!--<div class="card bg-light mb-3">
                   <div class="card-header bg-success text-white text-uppercase">Last product</div>
-                  <div class="card-body">
+                  <div class="card-body shadow-lg">
                       <img class="img-fluid" src="https://dummyimage.com/600x400/55595c/fff" />
                       <h5 class="card-title">Nombre del producto</h5>
                       <p class="card-text text-secondary">Breve descripción.</p>
@@ -61,7 +61,7 @@
                           <a href="producto.php">
                             <img class="card-img-top" src="images/ropa/Hombre/Buzos/buzo-1.jpg" alt="Card image cap">
                           </a>
-                          <div class="card-body">
+                          <div class="card-body shadow-lg">
                               <h4 class="card-title"><a href="producto.php" class="card-link text-dark" title="View Product">Nombre del producto</a></h4>
                               <p class="card-text text-secondary">Breve descripción.</p>
                               <div class="row">
@@ -80,7 +80,7 @@
                           <a href="producto.php">
                             <img class="card-img-top" src="images/ropa/Hombre/Buzos/buzo-2.jpg" alt="Card image cap">
                           </a>
-                          <div class="card-body">
+                          <div class="card-body shadow-lg">
                               <h4 class="card-title"><a href="producto.php" class="card-link text-dark" title="View Product">Nombre del producto</a></h4>
                               <p class="card-text text-secondary">Breve descripción.</p>
                               <div class="row">
@@ -99,7 +99,7 @@
                           <a href="producto.php">
                             <img class="card-img-top" src="images/ropa/Hombre/Buzos/buzo-3.jpg" alt="Card image cap">
                           </a>
-                          <div class="card-body">
+                          <div class="card-body shadow-lg">
                               <h4 class="card-title"><a href="producto.php" class="card-link text-dark" title="View Product">Nombre del producto</a></h4>
                               <p class="card-text text-secondary">Breve descripción.</p>
                               <div class="row">
@@ -118,7 +118,7 @@
                           <a href="producto.php">
                             <img class="card-img-top" src="images/ropa/Hombre/Buzos/buzo-4.jpg" alt="Card image cap">
                           </a>
-                          <div class="card-body">
+                          <div class="card-body shadow-lg">
                               <h4 class="card-title"><a href="producto.php" class="card-link text-dark" title="View Product">Nombre del producto</a></h4>
                               <p class="card-text text-secondary">Breve descripción.</p>
                               <div class="row">
@@ -137,7 +137,7 @@
                           <a href="producto.php">
                             <img class="card-img-top" src="images/ropa/Hombre/Buzos/buzo-5.jpg" alt="Card image cap">
                           </a>
-                          <div class="card-body">
+                          <div class="card-body shadow-lg">
                               <h4 class="card-title"><a href="producto.php" class="card-link text-dark" title="View Product">Nombre del producto</a></h4>
                               <p class="card-text text-secondary">Breve descripción.</p>
                               <div class="row">
@@ -156,7 +156,7 @@
                           <a href="producto.php">
                             <img class="card-img-top" src="images/ropa/Hombre/Buzos/buzo-6.jpg" alt="Card image cap">
                           </a>
-                          <div class="card-body">
+                          <div class="card-body shadow-lg">
                               <h4 class="card-title"><a href="producto.php" class="card-link text-dark" title="View Product">Nombre del producto</a></h4>
                               <p class="card-text text-secondary">Breve descripción.</p>
                               <div class="row">

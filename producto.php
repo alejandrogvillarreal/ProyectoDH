@@ -33,7 +33,7 @@
                 <div class="card-body">
                     <a href="" data-toggle="modal" data-target="#productModal">
                         <!-- <img class="img-fluid" src="https://dummyimage.com/800x800/55595c/fff" /> -->
-                        <img class="img-fluid img-thumbnail rounded mx-auto d-block" src="images/ropa/Hombre/Buzos/buzo-1.jpg" />
+                        <img class="img-fluid img-thumbnail rounded mx-auto d-block shadow-lg" src="images/ropa/Hombre/Buzos/buzo-1.jpg" />
                     </a>
                 </div>
             </div>
