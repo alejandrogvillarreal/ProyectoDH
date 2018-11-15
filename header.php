@@ -14,7 +14,7 @@
                 <!-- <li class="nav-item">
                     <a class="nav-link" href="index.php">Home</a>
                 </li> -->
-                <li class="nav-item dropdown">
+                <!-- <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="categorias.php" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Categorias
                   </a>
@@ -24,6 +24,39 @@
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="categorias.php">Jeans</a>
                   </div>
+                </li> -->
+                <li>
+                  <div class="dropdown">
+                    <a class="nav-link dropdown-toggle" href="categorias.php" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Categorias
+                    </a>
+          		      <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="navbarDropdown2">
+                      <!-- CATEGORIA DE HOMBRES -->
+                      <li class="dropdown-submenu">
+                        <a class="dropdown-item" href="categorias.php">Hombres</a>
+                        <ul class="dropdown-menu">
+                          <li>
+                            <a class="dropdown-item" href="categorias.php">Buzos</a>
+                            <a class="dropdown-item" href="categorias.php">Remeras</a>
+                            <a class="dropdown-item" href="categorias.php">Camisas</a>
+                            <a class="dropdown-item" href="categorias.php">Jeans</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <!-- CATEGORIA DE MUJERES -->
+                      <li class="dropdown-submenu">
+                        <a class="dropdown-item" href="categorias.php">Mujeres</a>
+                        <ul class="dropdown-menu">
+                          <li>
+                            <a class="dropdown-item" href="categorias.php">Blusas</a>
+                            <a class="dropdown-item" href="categorias.php">Pantalones</a>
+                            <a class="dropdown-item" href="categorias.php">Camisas</a>
+                            <a class="dropdown-item" href="categorias.php">Vestidos</a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="contacto.php">Contacto</a>
@@ -31,7 +64,6 @@
                 <li class="nav-item">
                     <a class="nav-link" href="preguntas.php">FAQ</a>
                 </li>
-
             </ul>
 
             <form class="form-inline my-2 my-lg-0">
