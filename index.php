@@ -81,13 +81,13 @@
 
           </div>
 
-          <!-- <div class="col-12 col-sm-6 col-md-5 col-lg-4 col-xl-3 zoom mb-4">
+          <div class="col-12 col-sm-6 col-md-5 col-lg-4 col-xl-3 zoom mb-4">
             <h5 class="text-dark text-center">Camperas</h5>
             <a href="categorias.php">
-              <img class="mx-auto d-block shadow-lg rounded zoom" src="https://dafitistaticar-a.akamaihd.net/cms/promo_750ndu_170718.jpg" alt="Camperas" />
+              <img class="mx-auto d-block shadow-lg rounded zoom" src="images/ropa/Mujer/Categorias/camperas.jpg" alt="Camperas" />
             </a>
 
-          </div> -->
+          </div>
 
           <div class="col-12 col-sm-6 col-md-5 col-lg-4 col-xl-3 zoom mb-4">
             <h5 class="text-dark text-center">Pantalones</h5>
