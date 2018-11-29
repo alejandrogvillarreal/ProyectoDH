@@ -217,3 +217,47 @@ window.onload = function(){
     /// FALTARIA HACER LAS VALIDACIONES DE JAVASCRIPT ANTES DE ENVIAR EL FORM
 
 }
+
+//PAISES API 
+//FALTAN LOS INPUT DE PROVINCIA EN EL HTML
+
+var inputPais = document.querySelector('input[name="pais"]');
+var inputProvincias = document.querySelector('input[name="provincia"]');
+var provinciaContenido = document.getElementById('provinciaContenido');
+// Se puede usar tambien querySelector
+
+fetch('https://restcountries.eu/rest/v2/all')
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (paises) {
+    paises.forEach(function (pais) {
+      inputPais.innerHTML += '<option>' + pais.name + '</option>';
+    });
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+
+inputPais.addEventListener('change', function () {
+  if (this.value === 'Argentina') {
+    provinciaContenido.style.display = 'block';
+
+    fetch('https://dev.digitalhouse.com/api/getProvincias')
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (provincias) {
+        inputProvincias.innerHTML = '';
+        provincias.forEach(function (provincia) {
+          inputProvincias.innerHTML += '<option>' + provincia.state + '</option>';
+        });
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  } else {
+    provinciaContenido.style.display = 'none';
+    inputProvincias.innerHTML = '';
+  }
+});
